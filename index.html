@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English Verb Conjugator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>English Verb Conjugator</h1>
+    <input type="text" id="verbInput" placeholder="Enter a verb (e.g., 'write')">
+    <button onclick="conjugateVerb()">Conjugate</button>
+    <div id="result"></div>
+
+    <script>
+        function conjugateVerb() {
+            const verb = document.getElementById('verbInput').value.trim().toLowerCase();
+            if (!verb) {
+                alert("Please enter a verb!");
+                return;
+            }
+
+            const conjugations = {
+                present: {
+                    simple: `I ${verb}<br>You ${verb}<br>He/She/It ${verb + (verb.endsWith('s') ? 'es' : 's')}<br>We ${verb}<br>They ${verb}`,
+                    continuous: `I am ${verb + 'ing'}<br>You are ${verb + 'ing'}<br>He/She/It is ${verb + 'ing'}<br>We are ${verb + 'ing'}<br>They are ${verb + 'ing'}`,
+                },
+                past: {
+                    simple: `I ${verb + 'ed'}<br>You ${verb + 'ed'}<br>He/She/It ${verb + 'ed'}<br>We ${verb + 'ed'}<br>They ${verb + 'ed'}`,
+                    continuous: `I was ${verb + 'ing'}<br>You were ${verb + 'ing'}<br>He/She/It was ${verb + 'ing'}<br>We were ${verb + 'ing'}<br>They were ${verb + 'ing'}`,
+                },
+                future: {
+                    simple: `I will ${verb}<br>You will ${verb}<br>He/She/It will ${verb}<br>We will ${verb}<br>They will ${verb}`,
+                }
+            };
+
+            let output = `<h2>Conjugations for "${verb}":</h2>`;
+            for (const tense in conjugations) {
+                output += `<h3>${tense.toUpperCase()}</h3>`;
+                for (const form in conjugations[tense]) {
+                    output += `<strong>${form}:</strong><p>${conjugations[tense][form]}</p>`;
+                }
+            }
+
+            document.getElementById('result').innerHTML = output;
+        }
+    </script>
+</body>
+</html>
