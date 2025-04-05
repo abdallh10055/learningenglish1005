@@ -1,74 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>English Verb Conjugator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="قاموس شامل لتصريف الأفعال الإنجليزية مع ترجمتها للعربية">
+    <meta name="keywords" content="قاموس, أفعال إنجليزية, تصريف أفعال, تعلم الإنجليزية">
+    <meta name="author" content="اسمك">
+    <title>قاموس تصريف الأفعال الإنجليزية</title>
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
             text-align: center;
-            background-color: #f4f4f9;
-            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        
         h1 {
-            color: #333;
+            margin: 0;
+            font-size: 2rem;
         }
-        input, button {
-            padding: 10px;
-            margin: 10px;
-            font-size: 16px;
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        #result {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            border-radius: 5px;
+        
+        .search-box {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        #search {
+            width: 80%;
             max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
+            padding: 0.8rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .dictionary {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .verbs-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .verb {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .note {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 1rem;
+            display: none;
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>English Verb Conjugator</h1>
-    <input type="text" id="verbInput" placeholder="Enter a verb (e.g., 'write')">
-    <button onclick="conjugateVerb()">Conjugate</button>
-    <div id="result"></div>
+    <header>
+        <h1>قاموس تصريف الأفعال الإنجليزية</h1>
+    </header>
+    
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="ابحث عن فعل..." aria-label="بحث عن فعل">
+        </div>
+        
+        <div class="no-results" id="noResults">لا توجد نتائج مطابقة للبحث</div>
+        
+        <div class="dictionary">
+            <div class="verbs-list">
+                <table id="verbsTable">
+                    <thead>
+                        <tr>
+                            <th>الفعل (الحاضر)</th>
+                            <th>الماضي</th>
+                            <th>التصريف الثالث</th>
+                            <th>المعنى العربي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- سيتم ملء الجدول بواسطة الجافاسكريبت -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; <span id="year"></span></p>
+    </footer>
 
     <script>
-        function conjugateVerb() {
-            const verb = document.getElementById('verbInput').value.trim().toLowerCase();
-            if (!verb) {
-                alert("Please enter a verb!");
-                return;
-            }
+        // قاموس الأفعال
+        const verbsDictionary = {
+            "act": {"past": "acted", "past_participle": "acted", "arabic": "يمثل/يتصرف"},
+            "add": {"past": "added", "past_participle": "added", "arabic": "يضيف"},
+            "agree": {"past": "agreed", "past_participle": "agreed", "arabic": "يوافق"},
+            "allow": {"past": "allowed", "past_participle": "allowed", "arabic": "يسمح"},
+            "answer": {"past": "answered", "past_participle": "answered", "arabic": "يجيب"},
+            "arrive": {"past": "arrived", "past_participle": "arrived", "arabic": "يصل"},
+            "ask": {"past": "asked", "past_participle": "asked", "arabic": "يسأل"},
+            "awake": {"past": "awoke", "past_participle": "awoken", "arabic": "يستيقظ", "note": "نادر، الأفضل استخدام wake"},
+            "back": {"past": "backed", "past_participle": "backed", "arabic": "يدعم/يتراجع"},
+            "bake": {"past": "baked", "past_participle": "baked", "arabic": "يخبز"},
+            "bear": {"past": "bore", "past_participle": "borne", "arabic": "يتحمل/يولد", "note": "يستخدم 'born' للمولود فقط"},
+            "become": {"past": "became", "past_participle": "become", "arabic": "يصبح"},
+            "begin": {"past": "began", "past_participle": "begun", "arabic": "يبدأ"},
+            "believe": {"past": "believed", "past_participle": "believed", "arabic": "يصدق/يعتقد"},
+            "break": {"past": "broke", "past_participle": "broken", "arabic": "يكسر"},
+            "bring": {"past": "brought", "past_participle": "brought", "arabic": "يأتي بـ"},
+            "build": {"past": "built", "past_participle": "built", "arabic": "يبني"},
+            "buy": {"past": "bought", "past_participle": "bought", "arabic": "يشتري"},
+            "catch": {"past": "caught", "past_participle": "caught", "arabic": "يمسك"},
+            "choose": {"past": "chose", "past_participle": "chosen", "arabic": "يختار"},
+            "come": {"past": "came", "past_participle": "come", "arabic": "يأتي"},
+            "cut": {"past": "cut", "past_participle": "cut", "arabic": "يقطع"},
+            "do": {"past": "did", "past_participle": "done", "arabic": "يفعل"},
+            "draw": {"past": "drew", "past_participle": "drawn", "arabic": "يرسم"},
+            "dream": {"past": "dreamed/dreamt", "past_participle": "dreamed/dreamt", "arabic": "يحلم", "note": "dreamt (بريطاني)"},
+            "drink": {"past": "drank", "past_participle": "drunk", "arabic": "يشرب"},
+            "drive": {"past": "drove", "past_participle": "driven", "arabic": "يقود"},
+            "eat": {"past": "ate", "past_participle": "eaten", "arabic": "يأكل"},
+            "fall": {"past": "fell", "past_participle": "fallen", "arabic": "يسقط"},
+            "feel": {"past": "felt", "past_participle": "felt", "arabic": "يشعر"},
+            "fight": {"past": "fought", "past_participle": "fought", "arabic": "يقاتل"},
+            "find": {"past": "found", "past_participle": "found", "arabic": "يجد"},
+            "fly": {"past": "flew", "past_participle": "flown", "arabic": "يطير"},
+            "forget": {"past": "forgot", "past_participle": "forgotten", "arabic": "ينسى"},
+            "get": {"past": "got", "past_participle": "gotten/got", "arabic": "يحصل", "note": "gotten (أمريكي)"},
+            "give": {"past": "gave", "past_participle": "given", "arabic": "يعطي"},
+            "go": {"past": "went", "past_participle": "gone", "arabic": "يذهب"},
+            "have": {"past": "had", "past_participle": "had", "arabic": "يملك"},
+            "hear": {"past": "heard", "past_participle": "heard", "arabic": "يسمع"},
+            "hide": {"past": "hid", "past_participle": "hidden", "arabic": "يختبئ"},
+            "hold": {"past": "held", "past_participle": "held", "arabic": "يمسك"},
+            "keep": {"past": "kept", "past_participle": "kept", "arabic": "يحتفظ"},
+            "know": {"past": "knew", "past_participle": "known", "arabic": "يعرف"},
+            "leave": {"past": "left", "past_participle": "left", "arabic": "يغادر/يترك"},
+            "lose": {"past": "lost", "past_participle": "lost", "arabic": "يفقد"},
+            "make": {"past": "made", "past_participle": "made", "arabic": "يصنع"},
+            "meet": {"past": "met", "past_participle": "met", "arabic": "يلتقي"},
+            "read": {"past": "read", "past_participle": "read", "arabic": "يقرأ"},
+            "run": {"past": "ran", "past_participle": "run", "arabic": "يجري"},
+            "say": {"past": "said", "past_participle": "said", "arabic": "يقول"},
+            "see": {"past": "saw", "past_participle": "seen", "arabic": "يرى"},
+            "sing": {"past": "sang", "past_participle": "sung", "arabic": "يغني"},
+            "speak": {"past": "spoke", "past_participle": "spoken", "arabic": "يتكلم"},
+            "take": {"past": "took", "past_participle": "taken", "arabic": "يأخذ"},
+            "write": {"past": "wrote", "past_participle": "written", "arabic": "يكتب"}
+        };
 
-            const conjugations = {
-                present: {
-                    simple: `I ${verb}<br>You ${verb}<br>He/She/It ${verb + (verb.endsWith('s') ? 'es' : 's')}<br>We ${verb}<br>They ${verb}`,
-                    continuous: `I am ${verb + 'ing'}<br>You are ${verb + 'ing'}<br>He/She/It is ${verb + 'ing'}<br>We are ${verb + 'ing'}<br>They are ${verb + 'ing'}`,
-                },
-                past: {
-                    simple: `I ${verb + 'ed'}<br>You ${verb + 'ed'}<br>He/She/It ${verb + 'ed'}<br>We ${verb + 'ed'}<br>They ${verb + 'ed'}`,
-                    continuous: `I was ${verb + 'ing'}<br>You were ${verb + 'ing'}<br>He/She/It was ${verb + 'ing'}<br>We were ${verb + 'ing'}<br>They were ${verb + 'ing'}`,
-                },
-                future: {
-                    simple: `I will ${verb}<br>You will ${verb}<br>He/She/It will ${verb}<br>We will ${verb}<br>They will ${verb}`,
-                }
-            };
-
-            let output = `<h2>Conjugations for "${verb}":</h2>`;
-            for (const tense in conjugations) {
-                output += `<h3>${tense.toUpperCase()}</h3>`;
-                for (const form in conjugations[tense]) {
-                    output += `<strong>${form}:</strong><p>${conjugations[tense][form]}</p>`;
-                }
-            }
-
-            document.getElementById('result').innerHTML = output;
+        // تعبئة الجدول بالأفعال
+        function populateTable() {
+            const tableBody = document.querySelector('#verbsTable tbody');
+            tableBody.innerHTML = '';
+            
+            Object.entries(verbsDictionary).forEach(([verb, data]) => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td class="verb">${verb}</td>
+                    <td>${data.past}</td>
+                    <td>${data.past_participle}</td>
+                    <td>${data.arabic} ${data.note ? `<span class="note">(${data.note})</span>` : ''}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
         }
+
+        // وظيفة البحث
+        function searchVerbs() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('verbsTable');
+            const rows = table.getElementsByTagName('tr');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+            
+            for (let i = 1; i < rows.length; i++) {
+                const verb = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+                if (verb.includes(filter)) {
+                    rows[i].style.display = '';
+                    hasResults = true;
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+            
+            noResults.style.display = hasResults ? 'none' : 'block';
+        }
+
+        // تحديث سنة حقوق النشر
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            populateTable();
+            
+            // إضافة مستمع حدث للبحث
+            document.getElementById('search').addEventListener('input', searchVerbs);
+        });
     </script>
-</body>
-</html>
+</body
+    </html>
