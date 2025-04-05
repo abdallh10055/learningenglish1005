@@ -1,283 +1,834 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta name="google-site-verification" content="761d48b56411a6a8" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="قاموس شامل لتصريف الأفعال الإنجليزية مع ترجمتها للعربية">
-    <meta name="keywords" content="قاموس, أفعال إنجليزية, تصريف أفعال, تعلم الإنجليزية">
-    <meta name="author" content="اسمك">
     <title>قاموس تصريف الأفعال الإنجليزية</title>
     <style>
         :root {
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
             --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --menu-color: #2c3e50;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
             background-color: var(--light-color);
             color: var(--dark-color);
+            transition: all 0.3s ease;
         }
         
+        /* الهيدر والقائمة */
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        h1 {
-            margin: 0;
-            font-size: 2rem;
+        .menu-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .search-box {
-            margin: 1rem 0;
-            text-align: center;
-        }
-        
-        #search {
-            width: 80%;
-            max-width: 500px;
-            padding: 0.8rem;
-            border: 2px solid var(--primary-color);
-            border-radius: 25px;
-            font-size: 1rem;
-            outline: none;
-        }
-        
-        .dictionary {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .verbs-list {
-            max-height: 600px;
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--menu-color);
+            color: white;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            padding-top: 60px;
             overflow-y: auto;
         }
         
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .sidebar.active {
+            right: 0;
         }
         
-        th, td {
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* الواجهة الرئيسية */
+        .main-content {
+            margin-top: 70px;
+            padding: 20px;
+            min-height: calc(100vh - 120px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* واجهة تصريف الأفعال */
+        .verb-conjugation {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .verb-conjugation h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 10px;
+        }
+        
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .conjugation-table th, 
+        .conjugation-table td {
             padding: 12px 15px;
             text-align: right;
             border-bottom: 1px solid #ddd;
         }
         
-        th {
+        .conjugation-table th {
             background-color: var(--primary-color);
             color: white;
-            position: sticky;
-            top: 0;
         }
         
-        tr:hover {
+        .conjugation-table tr:hover {
             background-color: #f5f5f5;
         }
         
-        .verb {
-            font-weight: bold;
-            color: var(--accent-color);
+        /* واجهة الاختبار */
+        .quiz-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
         }
         
-        .note {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            font-style: italic;
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
         
-        footer {
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .quiz-question {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-options {
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            text-align: right;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: #e0e0e0;
+        }
+        
+        /* نتائج الاختبار */
+        .quiz-result {
             text-align: center;
-            padding: 1rem;
+            padding: 20px;
+        }
+        
+        .quiz-result h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .quiz-score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .quiz-feedback {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* صفحة الاتصال */
+        .contact-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            margin-left: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* صفحة الإعدادات */
+        .settings-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .setting-group {
+            margin-bottom: 20px;
+        }
+        
+        .setting-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .setting-options {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .setting-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* الفوتر */
+        footer {
             background-color: var(--secondary-color);
             color: white;
-            margin-top: 2rem;
-        }
-        
-        .no-results {
             text-align: center;
-            padding: 1rem;
-            display: none;
-            color: var(--accent-color);
+            padding: 15px;
+            margin-top: 20px;
         }
         
+        /* تأثيرات للواجهة */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
         @media (max-width: 768px) {
-            th, td {
-                padding: 8px 10px;
-                font-size: 0.9rem;
+            .action-buttons {
+                flex-direction: column;
             }
             
-            h1 {
-                font-size: 1.5rem;
+            .btn {
+                width: 100%;
+            }
+            
+            .sidebar {
+                width: 250px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- الهيدر والقائمة -->
     <header>
-        <h1>قاموس تصريف الأفعال الإنجليزية</h1>
+        <div class="menu-btn">☰</div>
+        <h1>قاموس الأفعال</h1>
+        <div></div> <!-- عنصر فارغ للمحاذاة -->
     </header>
     
-    <div class="container">
-        <div class="search-box">
-            <input type="text" id="search" placeholder="ابحث عن فعل..." aria-label="بحث عن فعل">
-        </div>
-        
-        <div class="no-results" id="noResults">لا توجد نتائج مطابقة للبحث</div>
-        
-        <div class="dictionary">
-            <div class="verbs-list">
-                <table id="verbsTable">
+    <div class="sidebar">
+        <div class="close-btn">×</div>
+        <a href="#" class="menu-item" data-page="home">الرئيسية</a>
+        <a href="#" class="menu-item" data-page="verbs">تصريف الأفعال</a>
+        <a href="#" class="menu-item" data-page="quiz">اختبار الأفعال</a>
+        <a href="#" class="menu-item" data-page="contact">اتصل بنا</a>
+        <a href="#" class="menu-item" data-page="settings">الإعدادات</a>
+    </div>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <!-- الواجهة الرئيسية -->
+        <div id="home-page" class="page active fade-in">
+            <div class="hero">
+                <h1>مرحبًا بك في قاموس تصريف الأفعال الإنجليزية</h1>
+                <p>أداة متكاملة لتعلم تصريف الأفعال الإنجليزية الشاذة والعادية مع أمثلة واضحة واختبارات تفاعلية</p>
+                
+                <div class="action-buttons">
+                    <a href="#" class="btn btn-primary" id="use-site-btn">استخدام موقع الأفعال</a>
+                    <a href="#" class="btn btn-secondary" id="download-app-btn">تحميل تطبيق الأفعال</a>
+                </div>
+            </div>
+            
+            <div class="verb-conjugation">
+                <h2>أفعال شائعة</h2>
+                <table class="conjugation-table">
                     <thead>
                         <tr>
-                            <th>الفعل (الحاضر)</th>
+                            <th>الفعل</th>
                             <th>الماضي</th>
                             <th>التصريف الثالث</th>
-                            <th>المعنى العربي</th>
+                            <th>المعنى</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- سيتم ملء الجدول بواسطة الجافاسكريبت -->
+                        <tr>
+                            <td>go</td>
+                            <td>went</td>
+                            <td>gone</td>
+                            <td>يذهب</td>
+                        </tr>
+                        <tr>
+                            <td>eat</td>
+                            <td>ate</td>
+                            <td>eaten</td>
+                            <td>يأكل</td>
+                        </tr>
+                        <tr>
+                            <td>write</td>
+                            <td>wrote</td>
+                            <td>written</td>
+                            <td>يكتب</td>
+                        </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+        
+        <!-- واجهة تصريف الأفعال -->
+        <div id="verbs-page" class="page">
+            <div class="verb-conjugation">
+                <h2>تصريف الأفعال</h2>
+                <div class="search-box">
+                    <input type="text" id="verb-search" placeholder="ابحث عن فعل...">
+                    <button id="search-btn">بحث</button>
+                </div>
+                
+                <div id="verb-result">
+                    <h3 id="verb-name">play</h3>
+                    <table class="conjugation-table">
+                        <tr>
+                            <td>المصدر</td>
+                            <td id="base-form">play</td>
+                        </tr>
+                        <tr>
+                            <td>الماضي</td>
+                            <td id="past-form">played</td>
+                        </tr>
+                        <tr>
+                            <td>التصريف الثالث</td>
+                            <td id="participle-form">played</td>
+                        </tr>
+                        <tr>
+                            <td>المضارع المستمر</td>
+                            <td id="continuous-form">playing</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>أمثلة:</h3>
+                    <ul id="verb-examples">
+                        <li>I play football every weekend.</li>
+                        <li>Yesterday, I played tennis.</li>
+                        <li>I have played this game before.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- واجهة الاختبار -->
+        <div id="quiz-page" class="page">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2>اختبار الأفعال</h2>
+                    <div id="quiz-score">النقاط: 0/0</div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress" id="quiz-progress"></div>
+                </div>
+                
+                <div id="quiz-screen">
+                    <div class="quiz-question" id="quiz-question">
+                        ما هو تصريف الفعل "go" في الماضي؟
+                    </div>
+                    
+                    <div class="quiz-options">
+                        <button class="quiz-option">goed</button>
+                        <button class="quiz-option">went</button>
+                        <button class="quiz-option">gone</button>
+                        <button class="quiz-option">goes</button>
+                    </div>
+                    
+                    <button id="next-question-btn" class="btn btn-primary" disabled>السؤال التالي</button>
+                </div>
+                
+                <div id="result-screen" style="display: none;">
+                    <div class="quiz-result">
+                        <h2>أحسنت!</h2>
+                        <div class="quiz-score" id="final-score">نقاطك: 7/10</div>
+                        <div class="quiz-feedback" id="quiz-feedback">
+                            أداء جيد، ولكن يمكنك التحسن أكثر!
+                        </div>
+                        <button id="try-again-btn" class="btn btn-primary">حاول مرة أخرى</button>
+                        <button id="new-quiz-btn" class="btn btn-secondary">اختبار جديد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- صفحة الاتصال -->
+        <div id="contact-page" class="page">
+            <div class="contact-container">
+                <h2>اتصل بنا</h2>
+                <p>يسعدنا تواصلك معنا لأي استفسارات أو مقترحات</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>bdallhqrytm41@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>bdallhqrytm3@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+201040338275</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>01123493976</span>
+                    </div>
+                </div>
+                
+                <div class="feedback-form">
+                    <h3>أرسل ملاحظاتك</h3>
+                    <textarea id="feedback-message" rows="5" placeholder="اكتب ملاحظاتك هنا..."></textarea>
+                    <button id="send-feedback-btn" class="btn btn-primary">إرسال</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- صفحة الإعدادات -->
+        <div id="settings-page" class="page">
+            <div class="settings-container">
+                <h2>الإعدادات</h2>
+                
+                <div class="setting-group">
+                    <div class="setting-title">المظهر</div>
+                    <div class="setting-options">
+                        <div class="setting-option">
+                            <input type="radio" id="theme-light" name="theme" checked>
+                            <label for="theme-light">فاتح</label>
+                        </div>
+                        <div class="setting-option">
+                            <input type="radio" id="theme-dark" name="theme">
+                            <label for="theme-dark">غامق</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <div class="setting-title">حجم الخط</div>
+                    <div class="setting-options">
+                        <div class="setting-option">
+                            <input type="radio" id="font-small" name="font-size">
+                            <label for="font-small">صغير</label>
+                        </div>
+                        <div class="setting-option">
+                            <input type="radio" id="font-medium" name="font-size" checked>
+                            <label for="font-medium">متوسط</label>
+                        </div>
+                        <div class="setting-option">
+                            <input type="radio" id="font-large" name="font-size">
+                            <label for="font-large">كبير</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <div class="setting-title">لون السمة</div>
+                    <div class="setting-options">
+                        <div class="setting-option">
+                            <input type="radio" id="color-blue" name="theme-color" checked>
+                            <label for="color-blue">أزرق</label>
+                        </div>
+                        <div class="setting-option">
+                            <input type="radio" id="color-green" name="theme-color">
+                            <label for="color-green">أخضر</label>
+                        </div>
+                        <div class="setting-option">
+                            <input type="radio" id="color-purple" name="theme-color">
+                            <label for="color-purple">بنفسجي</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="save-settings-btn" class="btn btn-primary">حفظ الإعدادات</button>
             </div>
         </div>
     </div>
     
     <footer>
-        <p>جميع الحقوق محفوظة &copy; <span id="year"></span></p>
+        <p>جميع الحقوق محفوظة &copy; 2023 قاموس تصريف الأفعال الإنجليزية</p>
     </footer>
-
+    
     <script>
-        // قاموس الأفعال
-        const verbsDictionary = {
-            "act": {"past": "acted", "past_participle": "acted", "arabic": "يمثل/يتصرف"},
-            "add": {"past": "added", "past_participle": "added", "arabic": "يضيف"},
-            "agree": {"past": "agreed", "past_participle": "agreed", "arabic": "يوافق"},
-            "allow": {"past": "allowed", "past_participle": "allowed", "arabic": "يسمح"},
-            "answer": {"past": "answered", "past_participle": "answered", "arabic": "يجيب"},
-            "arrive": {"past": "arrived", "past_participle": "arrived", "arabic": "يصل"},
-            "ask": {"past": "asked", "past_participle": "asked", "arabic": "يسأل"},
-            "awake": {"past": "awoke", "past_participle": "awoken", "arabic": "يستيقظ", "note": "نادر، الأفضل استخدام wake"},
-            "back": {"past": "backed", "past_participle": "backed", "arabic": "يدعم/يتراجع"},
-            "bake": {"past": "baked", "past_participle": "baked", "arabic": "يخبز"},
-            "bear": {"past": "bore", "past_participle": "borne", "arabic": "يتحمل/يولد", "note": "يستخدم 'born' للمولود فقط"},
-            "become": {"past": "became", "past_participle": "become", "arabic": "يصبح"},
-            "begin": {"past": "began", "past_participle": "begun", "arabic": "يبدأ"},
-            "believe": {"past": "believed", "past_participle": "believed", "arabic": "يصدق/يعتقد"},
-            "break": {"past": "broke", "past_participle": "broken", "arabic": "يكسر"},
-            "bring": {"past": "brought", "past_participle": "brought", "arabic": "يأتي بـ"},
-            "build": {"past": "built", "past_participle": "built", "arabic": "يبني"},
-            "buy": {"past": "bought", "past_participle": "bought", "arabic": "يشتري"},
-            "catch": {"past": "caught", "past_participle": "caught", "arabic": "يمسك"},
-            "choose": {"past": "chose", "past_participle": "chosen", "arabic": "يختار"},
-            "come": {"past": "came", "past_participle": "come", "arabic": "يأتي"},
-            "cut": {"past": "cut", "past_participle": "cut", "arabic": "يقطع"},
-            "do": {"past": "did", "past_participle": "done", "arabic": "يفعل"},
-            "draw": {"past": "drew", "past_participle": "drawn", "arabic": "يرسم"},
-            "dream": {"past": "dreamed/dreamt", "past_participle": "dreamed/dreamt", "arabic": "يحلم", "note": "dreamt (بريطاني)"},
-            "drink": {"past": "drank", "past_participle": "drunk", "arabic": "يشرب"},
-            "drive": {"past": "drove", "past_participle": "driven", "arabic": "يقود"},
-            "eat": {"past": "ate", "past_participle": "eaten", "arabic": "يأكل"},
-            "fall": {"past": "fell", "past_participle": "fallen", "arabic": "يسقط"},
-            "feel": {"past": "felt", "past_participle": "felt", "arabic": "يشعر"},
-            "fight": {"past": "fought", "past_participle": "fought", "arabic": "يقاتل"},
-            "find": {"past": "found", "past_participle": "found", "arabic": "يجد"},
-            "fly": {"past": "flew", "past_participle": "flown", "arabic": "يطير"},
-            "forget": {"past": "forgot", "past_participle": "forgotten", "arabic": "ينسى"},
-            "get": {"past": "got", "past_participle": "gotten/got", "arabic": "يحصل", "note": "gotten (أمريكي)"},
-            "give": {"past": "gave", "past_participle": "given", "arabic": "يعطي"},
-            "go": {"past": "went", "past_participle": "gone", "arabic": "يذهب"},
-            "have": {"past": "had", "past_participle": "had", "arabic": "يملك"},
-            "hear": {"past": "heard", "past_participle": "heard", "arabic": "يسمع"},
-            "hide": {"past": "hid", "past_participle": "hidden", "arabic": "يختبئ"},
-            "hold": {"past": "held", "past_participle": "held", "arabic": "يمسك"},
-            "keep": {"past": "kept", "past_participle": "kept", "arabic": "يحتفظ"},
-            "know": {"past": "knew", "past_participle": "known", "arabic": "يعرف"},
-            "leave": {"past": "left", "past_participle": "left", "arabic": "يغادر/يترك"},
-            "lose": {"past": "lost", "past_participle": "lost", "arabic": "يفقد"},
-            "make": {"past": "made", "past_participle": "made", "arabic": "يصنع"},
-            "meet": {"past": "met", "past_participle": "met", "arabic": "يلتقي"},
-            "read": {"past": "read", "past_participle": "read", "arabic": "يقرأ"},
-            "run": {"past": "ran", "past_participle": "run", "arabic": "يجري"},
-            "say": {"past": "said", "past_participle": "said", "arabic": "يقول"},
-            "see": {"past": "saw", "past_participle": "seen", "arabic": "يرى"},
-            "sing": {"past": "sang", "past_participle": "sung", "arabic": "يغني"},
-            "speak": {"past": "spoke", "past_participle": "spoken", "arabic": "يتكلم"},
-            "take": {"past": "took", "past_participle": "taken", "arabic": "يأخذ"},
-            "write": {"past": "wrote", "past_participle": "written", "arabic": "يكتب"}
-        };
-
-        // تعبئة الجدول بالأفعال
-        function populateTable() {
-            const tableBody = document.querySelector('#verbsTable tbody');
-            tableBody.innerHTML = '';
-            
-            Object.entries(verbsDictionary).forEach(([verb, data]) => {
-                const row = document.createElement('tr');
+        // التحكم في القائمة الجانبية
+        const menuBtn = document.querySelector('.menu-btn');
+        const sidebar = document.querySelector('.sidebar');
+        const closeBtn = document.querySelector('.close-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const pages = document.querySelectorAll('.page');
+        
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+        
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = item.getAttribute('data-page') + '-page';
                 
-                row.innerHTML = `
-                    <td class="verb">${verb}</td>
-                    <td>${data.past}</td>
-                    <td>${data.past_participle}</td>
-                    <td>${data.arabic} ${data.note ? `<span class="note">(${data.note})</span>` : ''}</td>
-                `;
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                    if(page.id === pageId) {
+                        page.classList.add('active');
+                    }
+                });
                 
-                tableBody.appendChild(row);
+                sidebar.classList.remove('active');
             });
+        });
+        
+        // التحكم في الأزرار الرئيسية
+        document.getElementById('use-site-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById('verbs-page').classList.add('active');
+        });
+        
+        document.getElementById('download-app-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('سيتم تحميل التطبيق قريبًا!');
+            // هنا يمكنك إضافة كود التحميل الفعلي
+            // window.location.href = 'path/to/app.apk';
+        });
+        
+        // محاكاة اختبار الأفعال
+        const quizQuestions = [
+            {
+                question: "ما هو تصريف الفعل 'go' في الماضي؟",
+                options: ["goed", "went", "gone", "goes"],
+                answer: 1
+            },
+            {
+                question: "ما هو التصريف الثالث للفعل 'eat'؟",
+                options: ["eat", "ate", "eaten", "eating"],
+                answer: 2
+            },
+            {
+                question: "ما هو تصريف الفعل 'write' في الماضي؟",
+                options: ["writed", "wrote", "written", "write"],
+                answer: 1
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let score = 0;
+        
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-screen').style.display = 'block';
+            document.getElementById('result-screen').style.display = 'none';
+            showQuestion();
         }
-
-        // وظيفة البحث
-        function searchVerbs() {
-            const input = document.getElementById('search');
-            const filter = input.value.toLowerCase();
-            const table = document.getElementById('verbsTable');
-            const rows = table.getElementsByTagName('tr');
-            const noResults = document.getElementById('noResults');
-            let hasResults = false;
+        
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('quiz-question').textContent = question.question;
             
-            for (let i = 1; i < rows.length; i++) {
-                const verb = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
-                if (verb.includes(filter)) {
-                    rows[i].style.display = '';
-                    hasResults = true;
-                } else {
-                    rows[i].style.display = 'none';
-                }
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((option, index) => {
+                option.textContent = question.options[index];
+                option.onclick = () => selectAnswer(index);
+            });
+            
+            document.getElementById('next-question-btn').disabled = true;
+            document.getElementById('quiz-score').textContent = `النقاط: ${score}/${currentQuestion}`;
+            document.getElementById('quiz-progress').style.width = `${(currentQuestion / quizQuestions.length) * 100}%`;
+        }
+        
+        function selectAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            options.forEach(option => {
+                option.disabled = true;
+            });
+            
+            if(selectedIndex === question.answer) {
+                options[selectedIndex].style.backgroundColor = '#4CAF50';
+                options[selectedIndex].style.color = 'white';
+                score++;
+            } else {
+                options[selectedIndex].style.backgroundColor = '#f44336';
+                options[selectedIndex].style.color = 'white';
+                options[question.answer].style.backgroundColor = '#4CAF50';
+                options[question.answer].style.color = 'white';
             }
             
-            noResults.style.display = hasResults ? 'none' : 'block';
+            document.getElementById('next-question-btn').disabled = false;
+            document.getElementById('quiz-score').textContent = `النقاط: ${score}/${currentQuestion + 1}`;
         }
-
-        // تحديث سنة حقوق النشر
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // تهيئة الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            populateTable();
+        
+        document.getElementById('next-question-btn').addEventListener('click', () => {
+            currentQuestion++;
             
-            // إضافة مستمع حدث للبحث
-            document.getElementById('search').addEventListener('input', searchVerbs);
+            if(currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
         });
+        
+        function showResults() {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            
+            document.getElementById('final-score').textContent = `نقاطك: ${score}/${quizQuestions.length}`;
+            
+            const percentage = (score / quizQuestions.length) * 100;
+            let feedback = '';
+            
+            if(percentage >= 80) {
+                feedback = 'أداء ممتاز! أنت متقن للأفعال الشاذة.';
+            } else if(percentage >= 50) {
+                feedback = 'أداء جيد، ولكن يمكنك التحسن أكثر!';
+            } else {
+                feedback = 'تحتاج إلى مزيد من الممارسة. استمر في التعلم!';
+            }
+            
+            document.getElementById('quiz-feedback').textContent = feedback;
+            document.getElementById('quiz-progress').style.width = '100%';
+        }
+        
+        document.getElementById('try-again-btn').addEventListener('click', startQuiz);
+        document.getElementById('new-quiz-btn').addEventListener('click', () => {
+            // يمكنك إضافة المزيد من الأسئلة هنا
+            startQuiz();
+        });
+        
+        // بدء الاختبار عند الدخول إلى الصفحة
+        document.getElementById('quiz-page').addEventListener('click', startQuiz, { once: true });
+        
+        // إرسال الملاحظات
+        document.getElementById('send-feedback-btn').addEventListener('click', () => {
+            const feedback = document.getElementById('feedback-message').value;
+            if(feedback.trim() === '') {
+                alert('الرجاء إدخال ملاحظاتك قبل الإرسال');
+                return;
+            }
+            
+            alert('شكرًا لك على ملاحظاتك القيمة! سنقوم بمراجعتها قريبًا.');
+            document.getElementById('feedback-message').value = '';
+        });
+        
+        // حفظ الإعدادات
+        document.getElementById('save-settings-btn').addEventListener('click', () => {
+            alert('تم حفظ الإعدادات بنجاح!');
+        });
+        
+        // البحث عن الأفعال
+        document.getElementById('search-btn').addEventListener('click', searchVerb);
+        
+        function searchVerb() {
+            const verb = document.getElementById('verb-search').value.toLowerCase();
+            if(!verb) return;
+            
+            // هذه مجرد محاكاة - في التطبيق الحقيقي ستكون هناك قاعدة بيانات للأفعال
+            const verbs = {
+                'play': {
+                    base: 'play',
+                    past: 'played',
+                    participle: 'played',
+                    continuous: 'playing',
+                    examples: [
+                        'I play football every weekend.',
+                        'Yesterday, I played tennis.',
+                        'I have played this game before.'
+                    ]
+                },
+                'go': {
+                    base: 'go',
+                    past: 'went',
+                    participle: 'gone',
+                    continuous: 'going',
+                    examples: [
+                        'I go to school every day.',
+                        'Yesterday, I went to the park.',
+                        'I have gone to this place before.'
+                    ]
+                },
+                'eat': {
+                    base: 'eat',
+                    past: 'ate',
+                    participle: 'eaten',
+                    continuous: 'eating',
+                    examples: [
+                        'I eat breakfast at 7 AM.',
+                        'Yesterday, I ate pizza for dinner.',
+                        'I have eaten at this restaurant before.'
+                    ]
+                }
+            };
+            
+            if(verbs[verb]) {
+                const verbData = verbs[verb];
+                document.getElementById('verb-name').textContent = verb;
+                document.getElementById('base-form').textContent = verbData.base;
+                document.getElementById('past-form').textContent = verbData.past;
+                document.getElementById('participle-form').textContent = verbData.participle;
+                document.getElementById('continuous-form').textContent = verbData.continuous;
+                
+                const examplesList = document.getElementById('verb-examples');
+                examplesList.innerHTML = '';
+                verbData.examples.forEach(example => {
+                    const li = document.createElement('li');
+                    li.textContent = example;
+                    examplesList.appendChild(li);
+                });
+            } else {
+                alert('لم يتم العثور على الفعل. الرجاء التأكد من الإملاء.');
+            }
+        }
     </script>
-</body
+</body>
     </html>
