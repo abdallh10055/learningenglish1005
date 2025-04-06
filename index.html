@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="兀賮囟賱 鬲胤亘賷賯 賲噩丕賳賷 賱鬲氐乇賷賮 噩賲賷毓 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞 賲毓 丕賱鬲乇噩賲丞 丕賱毓乇亘賷丞">
-    <meta name="keywords" content="鬲氐乇賷賮 丕賱兀賮毓丕賱, 兀賮毓丕賱 廿賳噩賱賷夭賷丞, 鬲毓賱賲 丕賱廿賳噩賱賷夭賷丞, 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱卮丕匕丞">
+    <meta name="description" content="أفضل تطبيق مجاني لتصريف جميع الأفعال الإنجليزية مع الترجمة العربية">
+    <meta name="keywords" content="تصريف الأفعال, أفعال إنجليزية, تعلم الإنجليزية, تصريف الأفعال الشاذة">
     <meta name="author" content="abdallh10055">
-    <title>賲賵賯毓 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞</title>
+    <title>موقع تصريف الأفعال الإنجليزية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -42,7 +42,7 @@
             position: relative;
         }
         
-        /* 丕賱賵丕噩賴丞 丕賱乇卅賷爻賷丞 */
+        /* الواجهة الرئيسية */
         .main-screen {
             display: flex;
             flex-direction: column;
@@ -50,7 +50,7 @@
             justify-content: center;
             min-height: 80vh;
             text-align: center;
-            background-image: url('丕賱賵丕噩賴賴-丕賱乇卅賷爻賷賴.jpg');
+            background-image: url('الواجهه-الرئيسيه.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -116,7 +116,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        /* 丕賱賯賵丕卅賲 賵丕賱鬲亘賵賷亘丕鬲 */
+        /* القوائم والتبويبات */
         .menu-container {
             display: none;
             background-color: var(--card-bg);
@@ -158,7 +158,7 @@
             transform: translateX(5px);
         }
         
-        /* 賲丨鬲賵賶 丕賱鬲亘賵賷亘丕鬲 */
+        /* محتوى التبويبات */
         .tab-content {
             display: none;
             background-color: var(--card-bg);
@@ -169,7 +169,7 @@
             position: relative;
         }
         
-        /* 丕賱卮乇賷胤 丕賱噩丕賳亘賷 */
+        /* الشريط الجانبي */
         .sidebar-toggle {
             position: fixed;
             top: 20px;
@@ -253,7 +253,7 @@
             color: white;
         }
         
-        /* 賲丨鬲賵賶 丕賱亘丨孬 */
+        /* محتوى البحث */
         .search-container {
             max-width: 800px;
             margin: 0 auto;
@@ -362,7 +362,7 @@
             color: #7f8c8d;
         }
         
-        /* 賳馗丕賲 丕賱丕禺鬲亘丕乇 */
+        /* نظام الاختبار */
         .test-container {
             max-width: 800px;
             margin: 0 auto;
@@ -531,7 +531,7 @@
             background-color: #2980b9;
         }
         
-        /* 丕賱鬲亘賵賷亘丕鬲 丕賱兀禺乇賶 */
+        /* التبويبات الأخرى */
         .settings-content, .grammar-content, .contact-content {
             max-width: 800px;
             margin: 0 auto;
@@ -669,7 +669,7 @@
             transform: translateY(-3px);
         }
         
-        /* 鬲丨賲賷賱 丕賱鬲胤亘賷賯 */
+        /* تحميل التطبيق */
         .download-content {
             text-align: center;
             padding: 30px;
@@ -699,7 +699,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        /* 鬲亘賵賷亘 丕賱賯賵丕毓丿 丕賱賳丨賵賷丞 */
+        /* تبويب القواعد النحوية */
         .tenses-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -796,7 +796,7 @@
             }
         }
         
-        /* 賵囟毓 丕賱賱賷賱 */
+        /* وضع الليل */
         body.dark-mode {
             --bg-color: #2c3e50;
             --text-color: #f5f7fa;
@@ -808,80 +808,80 @@
 </head>
 <body>
     <div class="container">
-        <!-- 夭乇 丕賱卮乇賷胤 丕賱噩丕賳亘賷 -->
+        <!-- زر الشريط الجانبي -->
         <div class="sidebar-toggle" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </div>
         
-        <!-- 丕賱卮乇賷胤 丕賱噩丕賳亘賷 -->
+        <!-- الشريط الجانبي -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h3 class="sidebar-title">丕賱賯丕卅賲丞 丕賱乇卅賷爻賷丞</h3>
+                <h3 class="sidebar-title">القائمة الرئيسية</h3>
                 <button class="sidebar-close" id="sidebarClose">&times;</button>
             </div>
             <div class="sidebar-menu">
-                <div class="sidebar-item" data-tab="searchTab"><i class="fas fa-search"></i> 亘丨孬</div>
-                <div class="sidebar-item" data-tab="testTab"><i class="fas fa-question-circle"></i> 丕禺鬲亘丕乇</div>
-                <div class="sidebar-item" data-tab="grammarTab"><i class="fas fa-book"></i> 卮乇丨 鬲氐乇賷賮 丕賱兀賮毓丕賱</div>
-                <div class="sidebar-item" data-tab="settingsTab"><i class="fas fa-cog"></i> 丕賱廿毓丿丕丿丕鬲</div>
-                <div class="sidebar-item" data-tab="contactTab"><i class="fas fa-envelope"></i> 丕鬲氐賱 亘賳丕</div>
-                <div class="sidebar-item" data-tab="downloadTab"><i class="fas fa-download"></i> 鬲丨賲賷賱 丕賱鬲胤亘賷賯</div>
+                <div class="sidebar-item" data-tab="searchTab"><i class="fas fa-search"></i> بحث</div>
+                <div class="sidebar-item" data-tab="testTab"><i class="fas fa-question-circle"></i> اختبار</div>
+                <div class="sidebar-item" data-tab="grammarTab"><i class="fas fa-book"></i> شرح تصريف الأفعال</div>
+                <div class="sidebar-item" data-tab="settingsTab"><i class="fas fa-cog"></i> الإعدادات</div>
+                <div class="sidebar-item" data-tab="contactTab"><i class="fas fa-envelope"></i> اتصل بنا</div>
+                <div class="sidebar-item" data-tab="downloadTab"><i class="fas fa-download"></i> تحميل التطبيق</div>
             </div>
         </div>
         
-        <!-- 丕賱賵丕噩賴丞 丕賱乇卅賷爻賷丞 -->
+        <!-- الواجهة الرئيسية -->
         <div class="main-screen" id="mainScreen">
             <div class="main-content">
-                <h1 class="main-title">賲乇丨亘丕 亘賰賲 賮賷 賲賵賯毓 馃寪 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞</h1>
+                <h1 class="main-title">مرحبا بكم في موقع 🌐 تصريف الأفعال الإنجليزية</h1>
                 <p class="welcome-text">
-                    丕賱賲賵賯毓 賷毓乇囟 賰賱 鬲氐乇賷賮丕鬲 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞 丕賱卮丕匕丞 賵丕賱毓丕丿賷丞 賲毓 鬲乇噩賲鬲賴丕 賱賱毓乇亘賷丞.
-                    賷賲賰賳賰 丕賱亘丨孬 毓賳 兀賷 賮毓賱 賵賲毓乇賮丞 鬲氐乇賷賮丕鬲賴 賮賷 丕賱賲丕囟賷 賵丕賱鬲氐乇賷賮 丕賱孬丕賱孬貙 賰賲丕 賳賯丿賲 兀賲孬賱丞
-                    鬲賵囟賷丨賷丞 賱丕爻鬲禺丿丕賲 丕賱兀賮毓丕賱 賮賷 丕賱噩賲賱. 丕亘丿兀 乇丨賱鬲賰 賮賷 鬲毓賱賲 丕賱賱睾丞 丕賱廿賳噩賱賷夭賷丞 丕賱丌賳!
+                    الموقع يعرض كل تصريفات الأفعال الإنجليزية الشاذة والعادية مع ترجمتها للعربية.
+                    يمكنك البحث عن أي فعل ومعرفة تصريفاته في الماضي والتصريف الثالث، كما نقدم أمثلة
+                    توضيحية لاستخدام الأفعال في الجمل. ابدأ رحلتك في تعلم اللغة الإنجليزية الآن!
                 </p>
                 <div class="main-buttons">
-                    <button class="main-btn" id="useSiteBtn">丕爻鬲禺丿丕賲 賲賵賯毓 丕賱兀賮毓丕賱</button>
-                    <button class="main-btn" id="downloadBtn">鬲丨賲賷賱 丕賱鬲胤亘賷賯</button>
+                    <button class="main-btn" id="useSiteBtn">استخدام موقع الأفعال</button>
+                    <button class="main-btn" id="downloadBtn">تحميل التطبيق</button>
                 </div>
             </div>
         </div>
         
-        <!-- 賯丕卅賲丞 丕賱丕爻鬲禺丿丕賲 -->
+        <!-- قائمة الاستخدام -->
         <div class="menu-container" id="mainMenu">
-            <h2 class="menu-title">丕賱賯丕卅賲丞 丕賱乇卅賷爻賷丞</h2>
+            <h2 class="menu-title">القائمة الرئيسية</h2>
             <div class="menu-items">
-                <div class="menu-item" data-tab="searchTab"><i class="fas fa-search"></i> 亘丨孬</div>
-                <div class="menu-item" data-tab="testTab"><i class="fas fa-question-circle"></i> 丕禺鬲亘丕乇</div>
-                <div class="menu-item" data-tab="grammarTab"><i class="fas fa-book"></i> 卮乇丨 鬲氐乇賷賮 丕賱兀賮毓丕賱</div>
-                <div class="menu-item" data-tab="settingsTab"><i class="fas fa-cog"></i> 丕賱廿毓丿丕丿丕鬲</div>
-                <div class="menu-item" data-tab="contactTab"><i class="fas fa-envelope"></i> 丕鬲氐賱 亘賳丕</div>
-                <div class="menu-item" data-tab="downloadTab"><i class="fas fa-download"></i> 鬲丨賲賷賱 丕賱鬲胤亘賷賯</div>
+                <div class="menu-item" data-tab="searchTab"><i class="fas fa-search"></i> بحث</div>
+                <div class="menu-item" data-tab="testTab"><i class="fas fa-question-circle"></i> اختبار</div>
+                <div class="menu-item" data-tab="grammarTab"><i class="fas fa-book"></i> شرح تصريف الأفعال</div>
+                <div class="menu-item" data-tab="settingsTab"><i class="fas fa-cog"></i> الإعدادات</div>
+                <div class="menu-item" data-tab="contactTab"><i class="fas fa-envelope"></i> اتصل بنا</div>
+                <div class="menu-item" data-tab="downloadTab"><i class="fas fa-download"></i> تحميل التطبيق</div>
             </div>
         </div>
         
-        <!-- 賲丨鬲賵賶 丕賱鬲亘賵賷亘丕鬲 -->
+        <!-- محتوى التبويبات -->
         <div class="tab-content" id="searchTab">
             <div class="search-container">
-                <h2 class="section-title">亘丨孬 毓賳 鬲氐乇賷賮 丕賱兀賮毓丕賱</h2>
+                <h2 class="section-title">بحث عن تصريف الأفعال</h2>
                 <div class="search-box">
-                    <input type="text" id="search" placeholder="丕賰鬲亘 丕賱賮毓賱 兀賵 丕賱賲毓賳賶 丕賱毓乇亘賷 丕賱匕賷 鬲亘丨孬 毓賳賴...">
+                    <input type="text" id="search" placeholder="اكتب الفعل أو المعنى العربي الذي تبحث عنه...">
                     <div class="suggestions-container" id="suggestionsContainer"></div>
                 </div>
                 <table class="verbs-table" id="verbsTable">
                     <thead>
                         <tr>
-                            <th>丕賱賮毓賱 (丕賱丨丕囟乇)</th>
-                            <th>丕賱賲丕囟賷</th>
-                            <th>丕賱鬲氐乇賷賮 丕賱孬丕賱孬</th>
-                            <th>丕賱賲毓賳賶 丕賱毓乇亘賷</th>
+                            <th>الفعل (الحاضر)</th>
+                            <th>الماضي</th>
+                            <th>التصريف الثالث</th>
+                            <th>المعنى العربي</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- 爻賷鬲賲 賲賱丐賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                        <!-- سيتم ملؤه بالجافاسكريبت -->
                     </tbody>
                 </table>
                 
                 <div class="verb-examples" id="verbExamples">
-                    <!-- 爻賷鬲賲 賲賱丐賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 毓賳丿 丕賱亘丨孬 毓賳 賮毓賱 -->
+                    <!-- سيتم ملؤه بالجافاسكريبت عند البحث عن فعل -->
                 </div>
             </div>
         </div>
@@ -889,12 +889,12 @@
         <div class="tab-content" id="testTab">
             <div class="test-container">
                 <div class="test-header">
-                    <div class="test-progress" id="testProgress">丕賱爻丐丕賱 1 賲賳 10</div>
-                    <div class="test-timer" id="testTimer">丕賱賵賯鬲: 05:00</div>
+                    <div class="test-progress" id="testProgress">السؤال 1 من 10</div>
+                    <div class="test-timer" id="testTimer">الوقت: 05:00</div>
                 </div>
                 
                 <div class="test-question" id="currentQuestion">
-                    <div class="question-text">賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'go' 賮賷 丕賱賲丕囟賷責</div>
+                    <div class="question-text">ما هو تصريف الفعل 'go' في الماضي؟</div>
                     <div class="options-container" id="optionsContainer">
                         <button class="option-btn" data-answer="went">went</button>
                         <button class="option-btn" data-answer="gone">gone</button>
@@ -904,136 +904,136 @@
                 </div>
                 
                 <div class="test-controls">
-                    <button class="test-btn next-btn" id="nextQuestionBtn" disabled>丕賱鬲丕賱賷</button>
-                    <button class="test-btn finish-btn" id="finishTestBtn">廿賳賴丕亍 丕賱丕禺鬲亘丕乇</button>
+                    <button class="test-btn next-btn" id="nextQuestionBtn" disabled>التالي</button>
+                    <button class="test-btn finish-btn" id="finishTestBtn">إنهاء الاختبار</button>
                 </div>
                 
                 <div class="test-results" id="testResults">
-                    <h3 class="result-title">賳鬲賷噩丞 丕賱丕禺鬲亘丕乇</h3>
+                    <h3 class="result-title">نتيجة الاختبار</h3>
                     <div class="result-score" id="resultScore">80%</div>
                     
                     <div class="result-details" id="resultDetails">
                         <div class="result-item">
-                            <span>毓丿丿 丕賱兀爻卅賱丞:</span>
+                            <span>عدد الأسئلة:</span>
                             <span id="totalQuestions">10</span>
                         </div>
                         <div class="result-item">
-                            <span>丕賱廿噩丕亘丕鬲 丕賱氐丨賷丨丞:</span>
+                            <span>الإجابات الصحيحة:</span>
                             <span id="correctAnswers">8</span>
                         </div>
                         <div class="result-item">
-                            <span>丕賱廿噩丕亘丕鬲 丕賱禺丕胤卅丞:</span>
+                            <span>الإجابات الخاطئة:</span>
                             <span id="wrongAnswers">2</span>
                         </div>
                         <div class="result-item">
-                            <span>丕賱賳爻亘丞 丕賱賲卅賵賷丞:</span>
+                            <span>النسبة المئوية:</span>
                             <span id="percentage">80%</span>
                         </div>
                     </div>
                     
-                    <button class="restart-btn" id="restartTestBtn">廿毓丕丿丞 丕賱丕禺鬲亘丕乇</button>
+                    <button class="restart-btn" id="restartTestBtn">إعادة الاختبار</button>
                 </div>
             </div>
         </div>
         
         <div class="tab-content" id="grammarTab">
             <div class="grammar-content">
-                <h2 class="section-title">卮乇丨 鬲氐乇賷賮 丕賱兀賮毓丕賱 賵丕賱兀夭賲賳丞 賮賷 丕賱賱睾丞 丕賱廿賳噩賱賷夭賷丞</h2>
-                <p class="section-text">賮賷 賴匕丕 丕賱賯爻賲 爻鬲噩丿 卮乇丨賸丕 賲賮氐賱賸丕 賱賰賱 丕賱兀夭賲賳丞 賮賷 丕賱賱睾丞 丕賱廿賳噩賱賷夭賷丞 賲毓 兀賲孬賱丞 鬲賵囟賷丨賷丞 賱賰賱 丨丕賱丞.</p>
+                <h2 class="section-title">شرح تصريف الأفعال والأزمنة في اللغة الإنجليزية</h2>
+                <p class="section-text">في هذا القسم ستجد شرحًا مفصلًا لكل الأزمنة في اللغة الإنجليزية مع أمثلة توضيحية لكل حالة.</p>
                 
                 <div class="tenses-container">
-                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱亘爻賷胤 -->
+                    <!-- زمن المضارع البسيط -->
                     <div class="tense-card" data-tense="presentSimple">
-                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱亘爻賷胤 (Present Simple)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱毓丕丿丕鬲 賵丕賱兀丨丿丕孬 丕賱賲鬲賰乇乇丞 賵丕賱丨賯丕卅賯 丕賱毓丕賲丞.</div>
+                        <div class="tense-title">زمن المضارع البسيط (Present Simple)</div>
+                        <div class="section-text">يستخدم للتعبير عن العادات والأحداث المتكررة والحقائق العامة.</div>
                     </div>
                     
-                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱賲爻鬲賲乇 -->
+                    <!-- زمن المضارع المستمر -->
                     <div class="tense-card" data-tense="presentContinuous">
-                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱賲爻鬲賲乇 (Present Continuous)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 鬲丨丿孬 丕賱丌賳 兀賵 丕賱賲爻鬲賯亘賱 丕賱賲禺胤胤 賱賴.</div>
+                        <div class="tense-title">زمن المضارع المستمر (Present Continuous)</div>
+                        <div class="section-text">يستخدم للتعبير عن الأحداث التي تحدث الآن أو المستقبل المخطط له.</div>
                     </div>
                     
-                    <!-- 夭賲賳 丕賱賲丕囟賷 丕賱亘爻賷胤 -->
+                    <!-- زمن الماضي البسيط -->
                     <div class="tense-card" data-tense="pastSimple">
-                        <div class="tense-title">夭賲賳 丕賱賲丕囟賷 丕賱亘爻賷胤 (Past Simple)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 丨丿孬鬲 賵丕賳鬲賴鬲 賮賷 丕賱賲丕囟賷.</div>
+                        <div class="tense-title">زمن الماضي البسيط (Past Simple)</div>
+                        <div class="section-text">يستخدم للتعبير عن الأحداث التي حدثت وانتهت في الماضي.</div>
                     </div>
                     
-                    <!-- 夭賲賳 丕賱賲丕囟賷 丕賱賲爻鬲賲乇 -->
+                    <!-- زمن الماضي المستمر -->
                     <div class="tense-card" data-tense="pastContinuous">
-                        <div class="tense-title">夭賲賳 丕賱賲丕囟賷 丕賱賲爻鬲賲乇 (Past Continuous)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 賰丕賳鬲 賲爻鬲賲乇丞 賮賷 賵賯鬲 賲毓賷賳 賮賷 丕賱賲丕囟賷.</div>
+                        <div class="tense-title">زمن الماضي المستمر (Past Continuous)</div>
+                        <div class="section-text">يستخدم للتعبير عن الأحداث التي كانت مستمرة في وقت معين في الماضي.</div>
                     </div>
                     
-                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 -->
+                    <!-- زمن المضارع التام -->
                     <div class="tense-card" data-tense="presentPerfect">
-                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 (Present Perfect)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 丨丿孬鬲 賮賷 丕賱賲丕囟賷 賵賱賴丕 鬲兀孬賷乇 賮賷 丕賱丨丕囟乇.</div>
+                        <div class="tense-title">زمن المضارع التام (Present Perfect)</div>
+                        <div class="section-text">يستخدم للتعبير عن الأحداث التي حدثت في الماضي ولها تأثير في الحاضر.</div>
                     </div>
                     
-                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 丕賱賲爻鬲賲乇 -->
+                    <!-- زمن المضارع التام المستمر -->
                     <div class="tense-card" data-tense="presentPerfectContinuous">
-                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 丕賱賲爻鬲賲乇 (Present Perfect Continuous)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 亘丿兀鬲 賮賷 丕賱賲丕囟賷 賵賲爻鬲賲乇丞 丨鬲賶 丕賱丌賳.</div>
+                        <div class="tense-title">زمن المضارع التام المستمر (Present Perfect Continuous)</div>
+                        <div class="section-text">يستخدم للتعبير عن الأحداث التي بدأت في الماضي ومستمرة حتى الآن.</div>
                     </div>
                     
-                    <!-- 夭賲賳 丕賱賲丕囟賷 丕賱鬲丕賲 -->
+                    <!-- زمن الماضي التام -->
                     <div class="tense-card" data-tense="pastPerfect">
-                        <div class="tense-title">夭賲賳 丕賱賲丕囟賷 丕賱鬲丕賲 (Past Perfect)</div>
-                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丨丿孬 賵賯毓 賯亘賱 丨丿孬 丌禺乇 賮賷 丕賱賲丕囟賷.</div>
+                        <div class="tense-title">زمن الماضي التام (Past Perfect)</div>
+                        <div class="section-text">يستخدم للتعبير عن حدث وقع قبل حدث آخر في الماضي.</div>
                     </div>
                     
-                    <!-- 氐賷睾丞 丕賱賲亘賳賷 賱賱賲毓賱賵賲 賵丕賱賲亘賳賷 賱賱賲噩賴賵賱 -->
+                    <!-- صيغة المبني للمعلوم والمبني للمجهول -->
                     <div class="tense-card" data-tense="activePassive">
-                        <div class="tense-title">氐賷睾丞 丕賱賲亘賳賷 賱賱賲毓賱賵賲 賵丕賱賲亘賳賷 賱賱賲噩賴賵賱</div>
-                        <div class="section-text">卮乇丨 丕賱賮乇賯 亘賷賳 丕賱氐賷睾鬲賷賳 賵賰賷賮賷丞 丕賱鬲丨賵賷賱 亘賷賳賴賲丕.</div>
+                        <div class="tense-title">صيغة المبني للمعلوم والمبني للمجهول</div>
+                        <div class="section-text">شرح الفرق بين الصيغتين وكيفية التحويل بينهما.</div>
                     </div>
                 </div>
                 
-                <!-- 賲丨鬲賵賶 丕賱兀夭賲賳丞 (爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲) -->
+                <!-- محتوى الأزمنة (سيتم تعبئته بالجافاسكريبت) -->
                 <div id="presentSimpleContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="presentContinuousContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="pastSimpleContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="pastContinuousContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="presentPerfectContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="presentPerfectContinuousContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="pastPerfectContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
                 
                 <div id="activePassiveContent" class="tense-content">
-                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    <!-- سيتم تعبئته بالجافاسكريبت -->
                 </div>
             </div>
         </div>
         
         <div class="tab-content" id="settingsTab">
             <div class="settings-content">
-                <h2 class="section-title">丕賱廿毓丿丕丿丕鬲</h2>
-                <p class="section-text">賴賳丕 賷賲賰賳賰 鬲毓丿賷賱 廿毓丿丕丿丕鬲 丕賱賲賵賯毓 丨爻亘 鬲賮囟賷賱丕鬲賰 丕賱卮禺氐賷丞.</p>
+                <h2 class="section-title">الإعدادات</h2>
+                <p class="section-text">هنا يمكنك تعديل إعدادات الموقع حسب تفضيلاتك الشخصية.</p>
                 
                 <div class="settings-options">
                     <div class="setting-item">
-                        <span class="setting-label">賵囟毓 丕賱賱賷賱</span>
+                        <span class="setting-label">وضع الليل</span>
                         <label class="switch">
                             <input type="checkbox" id="darkModeToggle">
                             <span class="slider"></span>
@@ -1041,7 +1041,7 @@
                     </div>
                     
                     <div class="setting-item">
-                        <span class="setting-label">廿卮毓丕乇丕鬲 丕賱丕禺鬲亘丕乇</span>
+                        <span class="setting-label">إشعارات الاختبار</span>
                         <label class="switch">
                             <input type="checkbox" id="testNotificationsToggle" checked>
                             <span class="slider"></span>
@@ -1049,21 +1049,21 @@
                     </div>
                     
                     <div class="setting-item">
-                        <span class="setting-label">丨噩賲 丕賱禺胤</span>
+                        <span class="setting-label">حجم الخط</span>
                         <select id="fontSizeSelect">
-                            <option value="small">氐睾賷乇</option>
-                            <option value="medium" selected>賲鬲賵爻胤</option>
-                            <option value="large">賰亘賷乇</option>
+                            <option value="small">صغير</option>
+                            <option value="medium" selected>متوسط</option>
+                            <option value="large">كبير</option>
                         </select>
                     </div>
                     
                     <div class="setting-item">
-                        <span class="setting-label">賱賵賳 丕賱爻賲丞</span>
+                        <span class="setting-label">لون السمة</span>
                         <select id="themeColorSelect">
-                            <option value="blue" selected>兀夭乇賯</option>
-                            <option value="green">兀禺囟乇</option>
-                            <option value="red">兀丨賲乇</option>
-                            <option value="purple">亘賳賮爻噩賷</option>
+                            <option value="blue" selected>أزرق</option>
+                            <option value="green">أخضر</option>
+                            <option value="red">أحمر</option>
+                            <option value="purple">بنفسجي</option>
                         </select>
                     </div>
                 </div>
@@ -1072,8 +1072,8 @@
         
         <div class="tab-content" id="contactTab">
             <div class="contact-content">
-                <h2 class="section-title">丕鬲氐賱 亘賳丕</h2>
-                <p class="section-text">賱賱丕爻鬲賮爻丕乇丕鬲 兀賵 丕賱賲賯鬲乇丨丕鬲貙 賷賲賰賳賰 丕賱鬲賵丕氐賱 賲毓賳丕 毓亘乇 丕賱賵爻丕卅賱 丕賱鬲丕賱賷丞:</p>
+                <h2 class="section-title">اتصل بنا</h2>
+                <p class="section-text">للاستفسارات أو المقترحات، يمكنك التواصل معنا عبر الوسائل التالية:</p>
                 
                 <div class="contact-info">
                     <div class="contact-card">
@@ -1081,7 +1081,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-text">
-                            <div class="contact-title">丕賱亘乇賷丿 丕賱廿賱賰鬲乇賵賳賷</div>
+                            <div class="contact-title">البريد الإلكتروني</div>
                             <div>bdallhqrytm41@gmail.com</div>
                             <div>bdallhqrytm3@gmail.com</div>
                         </div>
@@ -1092,7 +1092,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-text">
-                            <div class="contact-title">丕賱賴丕鬲賮</div>
+                            <div class="contact-title">الهاتف</div>
                             <div>+201040338275</div>
                             <div>+201123493976</div>
                         </div>
@@ -1113,21 +1113,21 @@
                 <div class="download-icon">
                     <i class="fas fa-download"></i>
                 </div>
-                <h2 class="section-title">鬲丨賲賷賱 鬲胤亘賷賯 鬲氐乇賷賮 丕賱兀賮毓丕賱</h2>
-                <p class="section-text">賯賲 亘鬲賳夭賷賱 鬲胤亘賷賯賳丕 賱賱丨氐賵賱 毓賱賶 鬲噩乇亘丞 兀賮囟賱 賲毓 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞 亘丿賵賳 丕賱丨丕噩丞 賱賱丕鬲氐丕賱 亘丕賱廿賳鬲乇賳鬲.</p>
+                <h2 class="section-title">تحميل تطبيق تصريف الأفعال</h2>
+                <p class="section-text">قم بتنزيل تطبيقنا للحصول على تجربة أفضل مع تصريف الأفعال الإنجليزية بدون الحاجة للاتصال بالإنترنت.</p>
                 
-                <a href="賵丕噩賴丕鬲 丕賱鬲胤亘賷賯.zip" class="download-btn" id="downloadAppBtn" download>
-                    <i class="fas fa-download"></i> 鬲丨賲賷賱 丕賱鬲胤亘賷賯 丕賱丌賳
+                <a href="واجهات التطبيق.zip" class="download-btn" id="downloadAppBtn" download>
+                    <i class="fas fa-download"></i> تحميل التطبيق الآن
                 </a>
                 
                 <div class="section-text" style="margin-top: 30px;">
-                    <h3>賲賲賷夭丕鬲 丕賱鬲胤亘賷賯:</h3>
+                    <h3>مميزات التطبيق:</h3>
                     <ul style="text-align: right; margin-right: 20px; line-height: 2;">
-                        <li>毓賲賱 丿賵賳 丕賱丨丕噩丞 賱賱廿賳鬲乇賳鬲</li>
-                        <li>賵丕噩賴丞 賲爻鬲禺丿賲 爻賴賱丞 賵亘爻賷胤丞</li>
-                        <li>兀賰孬乇 賲賳 500 賮毓賱 賲毓 鬲氐乇賷賮丕鬲賴丕</li>
-                        <li>兀賲孬賱丞 氐賵鬲賷丞 賱賱賳胤賯 丕賱氐丨賷丨</li>
-                        <li>丕禺鬲亘丕乇丕鬲 鬲賮丕毓賱賷丞 賱鬲丨爻賷賳 賲爻鬲賵丕賰</li>
+                        <li>عمل دون الحاجة للإنترنت</li>
+                        <li>واجهة مستخدم سهلة وبسيطة</li>
+                        <li>أكثر من 500 فعل مع تصريفاتها</li>
+                        <li>أمثلة صوتية للنطق الصحيح</li>
+                        <li>اختبارات تفاعلية لتحسين مستواك</li>
                     </ul>
                 </div>
             </div>
@@ -1135,115 +1135,115 @@
     </div>
 
     <script>
-        // 賯丕賲賵爻 丕賱兀賮毓丕賱
+        // قاموس الأفعال
         const verbsDictionary = {
-            "act": {"past": "acted", "past_participle": "acted", "arabic": "賷賲孬賱/賷鬲氐乇賮"},
-            "add": {"past": "added", "past_participle": "added", "arabic": "賷囟賷賮"},
-            "agree": {"past": "agreed", "past_participle": "agreed", "arabic": "賷賵丕賮賯"},
-            "allow": {"past": "allowed", "past_participle": "allowed", "arabic": "賷爻賲丨"},
-            "answer": {"past": "answered", "past_participle": "answered", "arabic": "賷噩賷亘"},
-            "arrive": {"past": "arrived", "past_participle": "arrived", "arabic": "賷氐賱"},
-            "ask": {"past": "asked", "past_participle": "asked", "arabic": "賷爻兀賱"},
-            "awake": {"past": "awoke", "past_participle": "awoken", "arabic": "賷爻鬲賷賯馗", "note": "賳丕丿乇貙 丕賱兀賮囟賱 丕爻鬲禺丿丕賲 wake"},
-            "back": {"past": "backed", "past_participle": "backed", "arabic": "賷丿毓賲/賷鬲乇丕噩毓"},
-            "bake": {"past": "baked", "past_participle": "baked", "arabic": "賷禺亘夭"},
-            "be": {"past": "was/were", "past_participle": "been", "arabic": "賷賰賵賳", "note": "兀賴賲 賮毓賱 賮賷 丕賱廿賳噩賱賷夭賷丞"},
-            "bear": {"past": "bore", "past_participle": "borne", "arabic": "賷鬲丨賲賱/賷賵賱丿", "note": "賷爻鬲禺丿賲 'born' 賱賱賲賵賱賵丿 賮賯胤"},
-            "become": {"past": "became", "past_participle": "become", "arabic": "賷氐亘丨"},
-            "begin": {"past": "began", "past_participle": "begun", "arabic": "賷亘丿兀"},
-            "believe": {"past": "believed", "past_participle": "believed", "arabic": "賷氐丿賯/賷毓鬲賯丿"},
-            "break": {"past": "broke", "past_participle": "broken", "arabic": "賷賰爻乇"},
-            "bring": {"past": "brought", "past_participle": "brought", "arabic": "賷兀鬲賷 亘賭"},
-            "build": {"past": "built", "past_participle": "built", "arabic": "賷亘賳賷"},
-            "buy": {"past": "bought", "past_participle": "bought", "arabic": "賷卮鬲乇賷"},
-            "catch": {"past": "caught", "past_participle": "caught", "arabic": "賷賲爻賰"},
-            "choose": {"past": "chose", "past_participle": "chosen", "arabic": "賷禺鬲丕乇"},
-            "come": {"past": "came", "past_participle": "come", "arabic": "賷兀鬲賷"},
-            "cut": {"past": "cut", "past_participle": "cut", "arabic": "賷賯胤毓"},
-            "do": {"past": "did", "past_participle": "done", "arabic": "賷賮毓賱"},
-            "draw": {"past": "drew", "past_participle": "drawn", "arabic": "賷乇爻賲"},
-            "dream": {"past": "dreamed/dreamt", "past_participle": "dreamed/dreamt", "arabic": "賷丨賱賲", "note": "dreamt (亘乇賷胤丕賳賷)"},
-            "drink": {"past": "drank", "past_participle": "drunk", "arabic": "賷卮乇亘"},
-            "drive": {"past": "drove", "past_participle": "driven", "arabic": "賷賯賵丿"},
-            "eat": {"past": "ate", "past_participle": "eaten", "arabic": "賷兀賰賱"},
-            "fall": {"past": "fell", "past_participle": "fallen", "arabic": "賷爻賯胤"},
-            "feel": {"past": "felt", "past_participle": "felt", "arabic": "賷卮毓乇"},
-            "fight": {"past": "fought", "past_participle": "fought", "arabic": "賷賯丕鬲賱"},
-            "find": {"past": "found", "past_participle": "found", "arabic": "賷噩丿"},
-            "fly": {"past": "flew", "past_participle": "flown", "arabic": "賷胤賷乇"},
-            "forget": {"past": "forgot", "past_participle": "forgotten", "arabic": "賷賳爻賶"},
-            "get": {"past": "got", "past_participle": "gotten/got", "arabic": "賷丨氐賱", "note": "gotten (兀賲乇賷賰賷)"},
-            "give": {"past": "gave", "past_participle": "given", "arabic": "賷毓胤賷"},
-            "go": {"past": "went", "past_participle": "gone", "arabic": "賷匕賴亘"},
-            "have": {"past": "had", "past_participle": "had", "arabic": "賷賲賱賰"},
-            "hear": {"past": "heard", "past_participle": "heard", "arabic": "賷爻賲毓"},
-            "hide": {"past": "hid", "past_participle": "hidden", "arabic": "賷禺鬲亘卅"},
-            "hold": {"past": "held", "past_participle": "held", "arabic": "賷賲爻賰"},
-            "keep": {"past": "kept", "past_participle": "kept", "arabic": "賷丨鬲賮馗"},
-            "know": {"past": "knew", "past_participle": "known", "arabic": "賷毓乇賮"},
-            "leave": {"past": "left", "past_participle": "left", "arabic": "賷睾丕丿乇/賷鬲乇賰"},
-            "lose": {"past": "lost", "past_participle": "lost", "arabic": "賷賮賯丿"},
-            "make": {"past": "made", "past_participle": "made", "arabic": "賷氐賳毓"},
-            "meet": {"past": "met", "past_participle": "met", "arabic": "賷賱鬲賯賷"},
-            "read": {"past": "read", "past_participle": "read", "arabic": "賷賯乇兀"},
-            "run": {"past": "ran", "past_participle": "run", "arabic": "賷噩乇賷"},
-            "say": {"past": "said", "past_participle": "said", "arabic": "賷賯賵賱"},
-            "see": {"past": "saw", "past_participle": "seen", "arabic": "賷乇賶"},
-            "sing": {"past": "sang", "past_participle": "sung", "arabic": "賷睾賳賷"},
-            "speak": {"past": "spoke", "past_participle": "spoken", "arabic": "賷鬲賰賱賲"},
-            "take": {"past": "took", "past_participle": "taken", "arabic": "賷兀禺匕"},
-            "write": {"past": "wrote", "past_participle": "written", "arabic": "賷賰鬲亘"}
+            "act": {"past": "acted", "past_participle": "acted", "arabic": "يمثل/يتصرف"},
+            "add": {"past": "added", "past_participle": "added", "arabic": "يضيف"},
+            "agree": {"past": "agreed", "past_participle": "agreed", "arabic": "يوافق"},
+            "allow": {"past": "allowed", "past_participle": "allowed", "arabic": "يسمح"},
+            "answer": {"past": "answered", "past_participle": "answered", "arabic": "يجيب"},
+            "arrive": {"past": "arrived", "past_participle": "arrived", "arabic": "يصل"},
+            "ask": {"past": "asked", "past_participle": "asked", "arabic": "يسأل"},
+            "awake": {"past": "awoke", "past_participle": "awoken", "arabic": "يستيقظ", "note": "نادر، الأفضل استخدام wake"},
+            "back": {"past": "backed", "past_participle": "backed", "arabic": "يدعم/يتراجع"},
+            "bake": {"past": "baked", "past_participle": "baked", "arabic": "يخبز"},
+            "be": {"past": "was/were", "past_participle": "been", "arabic": "يكون", "note": "أهم فعل في الإنجليزية"},
+            "bear": {"past": "bore", "past_participle": "borne", "arabic": "يتحمل/يولد", "note": "يستخدم 'born' للمولود فقط"},
+            "become": {"past": "became", "past_participle": "become", "arabic": "يصبح"},
+            "begin": {"past": "began", "past_participle": "begun", "arabic": "يبدأ"},
+            "believe": {"past": "believed", "past_participle": "believed", "arabic": "يصدق/يعتقد"},
+            "break": {"past": "broke", "past_participle": "broken", "arabic": "يكسر"},
+            "bring": {"past": "brought", "past_participle": "brought", "arabic": "يأتي بـ"},
+            "build": {"past": "built", "past_participle": "built", "arabic": "يبني"},
+            "buy": {"past": "bought", "past_participle": "bought", "arabic": "يشتري"},
+            "catch": {"past": "caught", "past_participle": "caught", "arabic": "يمسك"},
+            "choose": {"past": "chose", "past_participle": "chosen", "arabic": "يختار"},
+            "come": {"past": "came", "past_participle": "come", "arabic": "يأتي"},
+            "cut": {"past": "cut", "past_participle": "cut", "arabic": "يقطع"},
+            "do": {"past": "did", "past_participle": "done", "arabic": "يفعل"},
+            "draw": {"past": "drew", "past_participle": "drawn", "arabic": "يرسم"},
+            "dream": {"past": "dreamed/dreamt", "past_participle": "dreamed/dreamt", "arabic": "يحلم", "note": "dreamt (بريطاني)"},
+            "drink": {"past": "drank", "past_participle": "drunk", "arabic": "يشرب"},
+            "drive": {"past": "drove", "past_participle": "driven", "arabic": "يقود"},
+            "eat": {"past": "ate", "past_participle": "eaten", "arabic": "يأكل"},
+            "fall": {"past": "fell", "past_participle": "fallen", "arabic": "يسقط"},
+            "feel": {"past": "felt", "past_participle": "felt", "arabic": "يشعر"},
+            "fight": {"past": "fought", "past_participle": "fought", "arabic": "يقاتل"},
+            "find": {"past": "found", "past_participle": "found", "arabic": "يجد"},
+            "fly": {"past": "flew", "past_participle": "flown", "arabic": "يطير"},
+            "forget": {"past": "forgot", "past_participle": "forgotten", "arabic": "ينسى"},
+            "get": {"past": "got", "past_participle": "gotten/got", "arabic": "يحصل", "note": "gotten (أمريكي)"},
+            "give": {"past": "gave", "past_participle": "given", "arabic": "يعطي"},
+            "go": {"past": "went", "past_participle": "gone", "arabic": "يذهب"},
+            "have": {"past": "had", "past_participle": "had", "arabic": "يملك"},
+            "hear": {"past": "heard", "past_participle": "heard", "arabic": "يسمع"},
+            "hide": {"past": "hid", "past_participle": "hidden", "arabic": "يختبئ"},
+            "hold": {"past": "held", "past_participle": "held", "arabic": "يمسك"},
+            "keep": {"past": "kept", "past_participle": "kept", "arabic": "يحتفظ"},
+            "know": {"past": "knew", "past_participle": "known", "arabic": "يعرف"},
+            "leave": {"past": "left", "past_participle": "left", "arabic": "يغادر/يترك"},
+            "lose": {"past": "lost", "past_participle": "lost", "arabic": "يفقد"},
+            "make": {"past": "made", "past_participle": "made", "arabic": "يصنع"},
+            "meet": {"past": "met", "past_participle": "met", "arabic": "يلتقي"},
+            "read": {"past": "read", "past_participle": "read", "arabic": "يقرأ"},
+            "run": {"past": "ran", "past_participle": "run", "arabic": "يجري"},
+            "say": {"past": "said", "past_participle": "said", "arabic": "يقول"},
+            "see": {"past": "saw", "past_participle": "seen", "arabic": "يرى"},
+            "sing": {"past": "sang", "past_participle": "sung", "arabic": "يغني"},
+            "speak": {"past": "spoke", "past_participle": "spoken", "arabic": "يتكلم"},
+            "take": {"past": "took", "past_participle": "taken", "arabic": "يأخذ"},
+            "write": {"past": "wrote", "past_participle": "written", "arabic": "يكتب"}
         };
 
-        // 兀爻卅賱丞 丕賱丕禺鬲亘丕乇
+        // أسئلة الاختبار
         const testQuestions = [
             {
-                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'go' 賮賷 丕賱賲丕囟賷責",
+                question: "ما هو تصريف الفعل 'go' في الماضي؟",
                 options: ["went", "gone", "goed", "goes"],
                 answer: "went"
             },
             {
-                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'eat'責",
+                question: "ما هو التصريف الثالث للفعل 'eat'؟",
                 options: ["ate", "eaten", "eat", "eated"],
                 answer: "eaten"
             },
             {
-                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'write' 賮賷 丕賱賲丕囟賷責",
+                question: "ما هو تصريف الفعل 'write' في الماضي؟",
                 options: ["wrote", "written", "writed", "write"],
                 answer: "wrote"
             },
             {
-                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'break'責",
+                question: "ما هو التصريف الثالث للفعل 'break'؟",
                 options: ["broke", "broken", "breaked", "break"],
                 answer: "broken"
             },
             {
-                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'sing' 賮賷 丕賱賲丕囟賷責",
+                question: "ما هو تصريف الفعل 'sing' في الماضي؟",
                 options: ["sang", "sung", "singed", "song"],
                 answer: "sang"
             },
             {
-                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'take'責",
+                question: "ما هو التصريف الثالث للفعل 'take'؟",
                 options: ["took", "taken", "taked", "take"],
                 answer: "taken"
             },
             {
-                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'drink' 賮賷 丕賱賲丕囟賷責",
+                question: "ما هو تصريف الفعل 'drink' في الماضي؟",
                 options: ["drank", "drunk", "drinked", "drink"],
                 answer: "drank"
             },
             {
-                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'see'責",
+                question: "ما هو التصريف الثالث للفعل 'see'؟",
                 options: ["saw", "seen", "seed", "see"],
                 answer: "seen"
             },
             {
-                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'bring' 賮賷 丕賱賲丕囟賷責",
+                question: "ما هو تصريف الفعل 'bring' في الماضي؟",
                 options: ["brought", "bringed", "brang", "bring"],
                 answer: "brought"
             },
             {
-                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'choose'責",
+                question: "ما هو التصريف الثالث للفعل 'choose'؟",
                 options: ["chose", "chosen", "choosed", "choose"],
                 answer: "chosen"
             }
@@ -1265,7 +1265,7 @@
         const verbsTable = document.getElementById('verbsTable').getElementsByTagName('tbody')[0];
         const verbExamples = document.getElementById('verbExamples');
         
-        // 毓賳丕氐乇 丕賱丕禺鬲亘丕乇
+        // عناصر الاختبار
         const testProgress = document.getElementById('testProgress');
         const testTimer = document.getElementById('testTimer');
         const currentQuestion = document.getElementById('currentQuestion');
@@ -1280,30 +1280,30 @@
         const percentage = document.getElementById('percentage');
         const restartTestBtn = document.getElementById('restartTestBtn');
         
-        // 丕賱卮乇賷胤 丕賱噩丕賳亘賷
+        // الشريط الجانبي
         const sidebarToggle = document.getElementById('sidebarToggle');
         const sidebar = document.getElementById('sidebar');
         const sidebarClose = document.getElementById('sidebarClose');
         const sidebarItems = document.querySelectorAll('.sidebar-item');
         const menuItems = document.querySelectorAll('.menu-item');
         
-        // 丕賱廿毓丿丕丿丕鬲
+        // الإعدادات
         const darkModeToggle = document.getElementById('darkModeToggle');
         const testNotificationsToggle = document.getElementById('testNotificationsToggle');
         const fontSizeSelect = document.getElementById('fontSizeSelect');
         const themeColorSelect = document.getElementById('themeColorSelect');
         
-        // 鬲丨賲賷賱 丕賱鬲胤亘賷賯
+        // تحميل التطبيق
         const downloadAppBtn = document.getElementById('downloadAppBtn');
 
-        // 賲鬲睾賷乇丕鬲 丕賱丕禺鬲亘丕乇
+        // متغيرات الاختبار
         let currentQuestionIndex = 0;
         let userAnswers = [];
-        let testTimeLeft = 300; // 5 丿賯丕卅賯 亘丕賱孬賵丕賳賷
+        let testTimeLeft = 300; // 5 دقائق بالثواني
         let timerInterval;
         let selectedOption = null;
 
-        // 鬲毓亘卅丞 噩丿賵賱 丕賱兀賮毓丕賱
+        // تعبئة جدول الأفعال
         function populateVerbsTable() {
             verbsTable.innerHTML = '';
             Object.entries(verbsDictionary).forEach(([verb, data]) => {
@@ -1317,7 +1317,7 @@
             });
         }
 
-        // 毓乇囟 兀賲孬賱丞 賱賱賮毓賱
+        // عرض أمثلة للفعل
         function showVerbExamples(verb) {
             const verbData = verbsDictionary[verb];
             if (!verbData) return;
@@ -1325,21 +1325,981 @@
             document.getElementById('currentVerb').textContent = verb;
             
             verbExamples.innerHTML = `
-                <h3 class="section-title">兀賲孬賱丞 丕爻鬲禺丿丕賲 丕賱賮毓賱 "${verb}"</h3>
+                <h3 class="section-title">أمثلة استخدام الفعل "${verb}"</h3>
                 
                 <div class="example-card">
-                    <div class="example-title">丕賱賲丕囟賷 丕賱鬲丕賲 (Past Perfect)</div>
-                    <div class="example-sentence">I had ${verbData.past_participle} before you arrived. (賰賳鬲 賯丿 ${verbData.arabic} 賯亘賱 賵氐賵賱賰)</div>
-                    <div class="example-sentence">After I had ${verbData.past_participle}, I went to sleep. (亘毓丿 兀賳 ${verbData.arabic}貙 匕賴亘鬲 賱賱賳賵賲)</div>
+                    <div class="example-title">الماضي التام (Past Perfect)</div>
+                    <div class="example-sentence">I had ${verbData.past_participle} before you arrived. (كنت قد ${verbData.arabic} قبل وصولك)</div>
+                    <div class="example-sentence">After I had ${verbData.past_participle}, I went to sleep. (بعد أن ${verbData.arabic}، ذهبت للنوم)</div>
                 </div>
                 
                 <div class="example-card">
-                    <div class="example-title">丕賱賲囟丕乇毓 丕賱鬲丕賲 (Present Perfect)</div>
-                    <div class="example-sentence">I have ${verbData.past_participle} this before. (賱賯丿 ${verbData.arabic} 賴匕丕 賲賳 賯亘賱)</div>
-                    <div class="example-sentence">She has never ${verbData.past_participle} a camel. (賴賷 賱賲 ${verbData.arabic} 噩賲賱丕賸 兀亘丿丕賸)</div>
+                    <div class="example-title">المضارع التام (Present Perfect)</div>
+                    <div class="example-sentence">I have ${verbData.past_participle} this before. (لقد ${verbData.arabic} هذا من قبل)</div>
+                    <div class="example-sentence">She has never ${verbData.past_participle} a camel. (هي لم ${verbData.arabic} جملاً أبداً)</div>
                 </div>
                 
                 <div class="example-card">
-                    <div class="example-title">丕賱賲囟丕乇毓 丕賱鬲丕賲 丕賱賲爻鬲賲乇 (Present Perfect Continuous)</div>
-                    <div class="example-sentence">I have been ${verb}ing for hours. (兀賳丕 兀${verbData.arabic} 賲賳匕 爻丕毓丕鬲)</div>
-  
+                    <div class="example-title">المضارع التام المستمر (Present Perfect Continuous)</div>
+                    <div class="example-sentence">I have been ${verb}ing for hours. (أنا أ${verbData.arabic} منذ ساعات)</div>
+                    <div class="example-sentence">She has been ${verb}ing all morning. (هي ${verbData.arabic} طوال الصباح)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">المضارع المستمر (Present Continuous)</div>
+                    <div class="example-sentence">I am ${verb}ing now. (أنا أ${verbData.arabic} الآن)</div>
+                    <div class="example-sentence">They are ${verb}ing at the moment. (هم ${verbData.arabic} في هذه اللحظة)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">صيغة الأمر (Imperative)</div>
+                    <div class="example-sentence">${verb} carefully! (${verbData.arabic} بحرص!)</div>
+                    <div class="example-sentence">Don't ${verb} here! (لا ${verbData.arabic} هنا!)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">الماضي المستمر (Past Continuous)</div>
+                    <div class="example-sentence">I was ${verb}ing when you called. (كنت أ${verbData.arabic} عندما اتصلت)</div>
+                    <div class="example-sentence">They were ${verb}ing all day yesterday. (هم ${verbData.arabic} طوال يوم أمس)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">الماضي البسيط (Past Simple)</div>
+                    <div class="example-sentence">I ${verbData.past} yesterday. (أنا ${verbData.arabic} أمس)</div>
+                    <div class="example-sentence">She ${verbData.past} last week. (هي ${verbData.arabic} الأسبوع الماضي)</div>
+                </div>
+            `;
+        }
+
+        // البحث عن الأفعال
+        function searchVerbs() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const rows = verbsTable.getElementsByTagName('tr');
+            let found = false;
+            
+            for (let row of rows) {
+                const verb = row.getElementsByTagName('td')[0].textContent.toLowerCase();
+                const arabic = row.getElementsByTagName('td')[3].textContent.toLowerCase();
+                
+                if (verb.includes(searchTerm) || arabic.includes(searchTerm)) {
+                    row.style.display = '';
+                    found = true;
+                    
+                    // إذا كان الفعل مطابق تماماً، عرض الأمثلة
+                    if (verb === searchTerm) {
+                        showVerbExamples(verb);
+                    }
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+            
+            // إخفاء الأمثلة إذا لم يتم العثور على الفعل
+            if (!found) {
+                verbExamples.innerHTML = '';
+            }
+        }
+
+        // عرض اقتراحات الأفعال
+        function showSuggestions(searchTerm) {
+            if (searchTerm.length < 2) {
+                suggestionsContainer.style.display = 'none';
+                return;
+            }
+            
+            const filteredVerbs = Object.keys(verbsDictionary).filter(verb => 
+                verb.toLowerCase().startsWith(searchTerm.toLowerCase()) || 
+                verbsDictionary[verb].arabic.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            
+            if (filteredVerbs.length > 0) {
+                suggestionsContainer.innerHTML = '';
+                filteredVerbs.slice(0, 5).forEach(verb => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.className = 'suggestion-item';
+                    suggestionItem.textContent = `${verb} - ${verbsDictionary[verb].arabic}`;
+                    suggestionItem.addEventListener('click', () => {
+                        searchInput.value = verb;
+                        suggestionsContainer.style.display = 'none';
+                        searchVerbs();
+                    });
+                    suggestionsContainer.appendChild(suggestionItem);
+                });
+                suggestionsContainer.style.display = 'block';
+            } else {
+                suggestionsContainer.style.display = 'none';
+            }
+        }
+
+        // تعبئة محتوى القواعد النحوية
+        function populateGrammarContent() {
+            // زمن المضارع البسيط
+            document.getElementById('presentSimpleContent').innerHTML = `
+                <h3 class="section-title">زمن المضارع البسيط (Present Simple)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن المضارع البسيط للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>العادات والأحداث المتكررة</li>
+                        <li>الحقائق العامة</li>
+                        <li>المواعيد الثابتة</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I/You/We/They + المصدر</td>
+                                <td>I go to school every day.</td>
+                                <td>أذهب إلى المدرسة كل يوم.</td>
+                            </tr>
+                            <tr>
+                                <td>He/She/It + المصدر + s/es</td>
+                                <td>She goes to school every day.</td>
+                                <td>هي تذهب إلى المدرسة كل يوم.</td>
+                            </tr>
+                            <tr>
+                                <td>Do + I/you/we/they + المصدر؟</td>
+                                <td>Do you like coffee?</td>
+                                <td>هل تحب القهوة؟</td>
+                            </tr>
+                            <tr>
+                                <td>Does + he/she/it + المصدر؟</td>
+                                <td>Does she speak English?</td>
+                                <td>هل تتحدث الإنجليزية؟</td>
+                            </tr>
+                            <tr>
+                                <td>I/You/We/They + don't + المصدر</td>
+                                <td>I don't like tea.</td>
+                                <td>أنا لا أحب الشاي.</td>
+                            </tr>
+                            <tr>
+                                <td>He/She/It + doesn't + المصدر</td>
+                                <td>He doesn't play football.</td>
+                                <td>هو لا يلعب كرة القدم.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> always, usually, often, sometimes, never, every day/week/month</p>
+                </div>
+            `;
+            
+            // زمن المضارع المستمر
+            document.getElementById('presentContinuousContent').innerHTML = `
+                <h3 class="section-title">زمن المضارع المستمر (Present Continuous)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن المضارع المستمر للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>الأحداث التي تحدث الآن</li>
+                        <li>الأحداث المؤقتة</li>
+                        <li>الخطط المستقبلية المحددة</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>am/is/are + الفعل + ing</td>
+                                <td>I am studying now.</td>
+                                <td>أنا أدرس الآن.</td>
+                            </tr>
+                            <tr>
+                                <td>am/is/are + not + الفعل + ing</td>
+                                <td>She isn't listening to music.</td>
+                                <td>هي لا تستمع إلى الموسيقى.</td>
+                            </tr>
+                            <tr>
+                                <td>Am/Is/Are + الفاعل + الفعل + ing؟</td>
+                                <td>Are you watching TV?</td>
+                                <td>هل تشاهد التلفاز؟</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> now, at the moment, today, these days, tonight</p>
+                </div>
+            `;
+            
+            // زمن الماضي البسيط
+            document.getElementById('pastSimpleContent').innerHTML = `
+                <h3 class="section-title">زمن الماضي البسيط (Past Simple)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن الماضي البسيط للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>الأحداث التي حدثت وانتهت في الماضي</li>
+                        <li>العادات السابقة</li>
+                        <li>الأحداث المتتالية في الماضي</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>الفاعل + التصريف الثاني</td>
+                                <td>I went to school yesterday.</td>
+                                <td>ذهبت إلى المدرسة أمس.</td>
+                            </tr>
+                            <tr>
+                                <td>Did + الفاعل + المصدر؟</td>
+                                <td>Did you see the movie?</td>
+                                <td>هل شاهدت الفيلم؟</td>
+                            </tr>
+                            <tr>
+                                <td>الفاعل + didn't + المصدر</td>
+                                <td>She didn't come to the party.</td>
+                                <td>هي لم تحضر الحفلة.</td>
+                            </tr>
+                            <tr>
+                                <td>Was/Were + الفاعل؟</td>
+                                <td>Were you at home?</td>
+                                <td>هل كنت في المنزل؟</td>
+                            </tr>
+                            <tr>
+                                <td>الفاعل + wasn't/weren't</td>
+                                <td>I wasn't happy.</td>
+                                <td>لم أكن سعيداً.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> yesterday, last week/month/year, ago, in 2010, when</p>
+                </div>
+            `;
+            
+            // زمن الماضي المستمر
+            document.getElementById('pastContinuousContent').innerHTML = `
+                <h3 class="section-title">زمن الماضي المستمر (Past Continuous)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن الماضي المستمر للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>الأحداث التي كانت مستمرة في وقت معين في الماضي</li>
+                        <li>حدث طويل قطع حدث آخر قصير</li>
+                        <li>حدثين كانا يحدثان في نفس الوقت</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>was/were + الفعل + ing</td>
+                                <td>I was studying at 8 PM.</td>
+                                <td>كنت أدرس في الساعة الثامنة.</td>
+                            </tr>
+                            <tr>
+                                <td>wasn't/weren't + الفعل + ing</td>
+                                <td>They weren't playing football.</td>
+                                <td>لم يكونوا يلعبون كرة القدم.</td>
+                            </tr>
+                            <tr>
+                                <td>Was/Were + الفاعل + الفعل + ing؟</td>
+                                <td>Was she sleeping?</td>
+                                <td>هل كانت نائمة؟</td>
+                            </tr>
+                            <tr>
+                                <td>Past Continuous + when + Past Simple</td>
+                                <td>I was reading when he called.</td>
+                                <td>كنت أقرأ عندما اتصل.</td>
+                            </tr>
+                            <tr>
+                                <td>While + Past Continuous, Past Continuous</td>
+                                <td>While I was cooking, she was cleaning.</td>
+                                <td>بينما كنت أطبخ، كانت هي تنظف.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> while, when, as, at 5 o'clock yesterday, all day</p>
+                </div>
+            `;
+            
+            // زمن المضارع التام
+            document.getElementById('presentPerfectContent').innerHTML = `
+                <h3 class="section-title">زمن المضارع التام (Present Perfect)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن المضارع التام للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>أحداث حدثت في الماضي ولها تأثير في الحاضر</li>
+                        <li>أحداث حدثت في الماضي بدون ذكر وقت محدد</li>
+                        <li>أحداث بدأت في الماضي ومستمرة حتى الآن</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>have/has + التصريف الثالث</td>
+                                <td>I have visited Paris.</td>
+                                <td>لقد زرت باريس.</td>
+                            </tr>
+                            <tr>
+                                <td>haven't/hasn't + التصريف الثالث</td>
+                                <td>She hasn't finished her work.</td>
+                                <td>هي لم تنهي عملها.</td>
+                            </tr>
+                            <tr>
+                                <td>Have/Has + الفاعل + التصريف الثالث؟</td>
+                                <td>Have you ever been to London?</td>
+                                <td>هل زرت لندن من قبل؟</td>
+                            </tr>
+                            <tr>
+                                <td>have/has + just/already + التصريف الثالث</td>
+                                <td>He has already left.</td>
+                                <td>لقد غادر بالفعل.</td>
+                            </tr>
+                            <tr>
+                                <td>haven't/hasn't + التصريف الثالث + yet</td>
+                                <td>I haven't eaten yet.</td>
+                                <td>لم آكل بعد.</td>
+                            </tr>
+                            <tr>
+                                <td>have/has + never + التصريف الثالث</td>
+                                <td>She has never seen snow.</td>
+                                <td>هي لم تر الثلج أبداً.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> ever, never, just, already, yet, since, for, recently</p>
+                </div>
+            `;
+            
+            // زمن المضارع التام المستمر
+            document.getElementById('presentPerfectContinuousContent').innerHTML = `
+                <h3 class="section-title">زمن المضارع التام المستمر (Present Perfect Continuous)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن المضارع التام المستمر للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>أحداث بدأت في الماضي ومستمرة حتى الآن</li>
+                        <li>أحداث لها نتائج واضحة في الحاضر</li>
+                        <li>أحداث استمرت لفترة زمنية</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>have/has + been + الفعل + ing</td>
+                                <td>I have been working for 3 hours.</td>
+                                <td>أنا أعمل منذ 3 ساعات.</td>
+                            </tr>
+                            <tr>
+                                <td>haven't/hasn't + been + الفعل + ing</td>
+                                <td>She hasn't been feeling well.</td>
+                                <td>هي لم تكن تشعر بحال جيدة.</td>
+                            </tr>
+                            <tr>
+                                <td>Have/Has + الفاعل + been + الفعل + ing؟</td>
+                                <td>Have you been waiting long?</td>
+                                <td>هل انتظرت طويلاً؟</td>
+                            </tr>
+                            <tr>
+                                <td>How long + have/has + الفاعل + been + الفعل + ing؟</td>
+                                <td>How long have you been learning English?</td>
+                                <td>منذ متى وأنت تتعلم الإنجليزية؟</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> for, since, all day/week, how long, lately</p>
+                </div>
+            `;
+            
+            // زمن الماضي التام
+            document.getElementById('pastPerfectContent').innerHTML = `
+                <h3 class="section-title">زمن الماضي التام (Past Perfect)</h3>
+                <div class="section-text">
+                    <p>يستخدم زمن الماضي التام للتعبير عن:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>حدث وقع قبل حدث آخر في الماضي</li>
+                        <li>حدث وقع قبل وقت محدد في الماضي</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الصيغة</th>
+                                <th>مثال</th>
+                                <th>التعريب</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>had + التصريف الثالث</td>
+                                <td>I had finished my work before he arrived.</td>
+                                <td>كنت قد أنهيت عملي قبل أن يصل.</td>
+                            </tr>
+                            <tr>
+                                <td>hadn't + التصريف الثالث</td>
+                                <td>She hadn't seen the movie before.</td>
+                                <td>لم تكن قد شاهدت الفيلم من قبل.</td>
+                            </tr>
+                            <tr>
+                                <td>Had + الفاعل + التصريف الثالث؟</td>
+                                <td>Had you visited Paris before?</td>
+                                <td>هل زرت باريس من قبل؟</td>
+                            </tr>
+                            <tr>
+                                <td>Past Perfect + before + Past Simple</td>
+                                <td>I had eaten before I went out.</td>
+                                <td>كنت قد أكلت قبل أن أخرج.</td>
+                            </tr>
+                            <tr>
+                                <td>Past Simple + after + Past Perfect</td>
+                                <td>I went out after I had eaten.</td>
+                                <td>خرجت بعد أن كنت قد أكلت.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>الكلمات الدالة:</strong> before, after, already, just, never, by the time</p>
+                </div>
+            `;
+            
+            // صيغة المبني للمعلوم والمبني للمجهول
+            document.getElementById('activePassiveContent').innerHTML = `
+                <h3 class="section-title">صيغة المبني للمعلوم والمبني للمجهول</h3>
+                <div class="section-text">
+                    <p>صيغة المبني للمجهول تستخدم عندما:</p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>الفاعل غير معروف أو غير مهم</li>
+                        <li>نريد التركيز على الحدث بدلاً من الفاعل</li>
+                        <li>الفاعل واضح من السياق</li>
+                    </ul>
+                </div>
+                
+                <div class="tense-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الزمن</th>
+                                <th>المبني للمعلوم</th>
+                                <th>المبني للمجهول</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>المضارع البسيط</td>
+                                <td>She writes a letter.</td>
+                                <td>A letter is written (by her).</td>
+                            </tr>
+                            <tr>
+                                <td>الماضي البسيط</td>
+                                <td>She wrote a letter.</td>
+                                <td>A letter was written (by her).</td>
+                            </tr>
+                            <tr>
+                                <td>المضارع المستمر</td>
+                                <td>She is writing a letter.</td>
+                                <td>A letter is being written (by her).</td>
+                            </tr>
+                            <tr>
+                                <td>الماضي المستمر</td>
+                                <td>She was writing a letter.</td>
+                                <td>A letter was being written (by her).</td>
+                            </tr>
+                            <tr>
+                                <td>المضارع التام</td>
+                                <td>She has written a letter.</td>
+                                <td>A letter has been written (by her).</td>
+                            </tr>
+                            <tr>
+                                <td>الماضي التام</td>
+                                <td>She had written a letter.</td>
+                                <td>A letter had been written (by her).</td>
+                            </tr>
+                            <tr>
+                                <td>المستقبل البسيط</td>
+                                <td>She will write a letter.</td>
+                                <td>A letter will be written (by her).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="section-text">
+                    <p><strong>ملاحظات:</strong></p>
+                    <ul style="margin-right: 20px; line-height: 2;">
+                        <li>عند استخدام "by" نضع الفاعل في نهاية الجملة</li>
+                        <li>يمكن حذف "by" إذا كان الفاعل غير معروف أو غير مهم</li>
+                        <li>الأفعال الناقصة (can, could, may, might, must, should) تبقى كما هي مع إضافة be + التصريف الثالث</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        // إظهار/إخفاء التبويبات
+        function showTab(tabToShow) {
+            // إخفاء جميع التبويبات أولاً
+            const allTabs = [searchTab, testTab, grammarTab, settingsTab, contactTab, downloadTab, mainMenu];
+            allTabs.forEach(tab => tab.style.display = 'none');
+            
+            // إظهار التبويب المطلوب
+            tabToShow.style.display = 'block';
+            
+            // إذا كان التبويب هو الاختبار، نبدأ الاختبار
+            if (tabToShow === testTab) {
+                startTest();
+            }
+            
+            // إذا كان التبويب هو القواعد النحوية، نعبئ المحتوى
+            if (tabToShow === grammarTab) {
+                populateGrammarContent();
+            }
+            
+            // إظهار أيقونة القائمة بعد اختيار تبويب
+            if (tabToShow !== mainMenu) {
+                sidebarToggle.style.display = 'flex';
+            }
+        }
+
+        // بدء الاختبار
+        function startTest() {
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            testTimeLeft = 300;
+            
+            // إظهار أول سؤال
+            showQuestion();
+            
+            // بدء المؤقت
+            startTimer();
+            
+            // إخفاء النتائج
+            testResults.style.display = 'none';
+            
+            // إظهار عناصر الاختبار
+            currentQuestion.style.display = 'block';
+            nextQuestionBtn.style.display = 'block';
+            finishTestBtn.style.display = 'block';
+        }
+
+        // عرض السؤال الحالي
+        function showQuestion() {
+            const question = testQuestions[currentQuestionIndex];
+            
+            // تحديث تقدم الاختبار
+            testProgress.textContent = `السؤال ${currentQuestionIndex + 1} من ${testQuestions.length}`;
+            
+            // عرض نص السؤال
+            document.querySelector('.question-text').textContent = question.question;
+            
+            // عرض الخيارات
+            optionsContainer.innerHTML = '';
+            question.options.forEach(option => {
+                const optionBtn = document.createElement('button');
+                optionBtn.className = 'option-btn';
+                optionBtn.textContent = option;
+                optionBtn.dataset.answer = option;
+                optionBtn.addEventListener('click', selectOption);
+                optionsContainer.appendChild(optionBtn);
+            });
+            
+            // تعطيل زر التالي حتى يتم اختيار إجابة
+            nextQuestionBtn.disabled = true;
+            
+            // إخفاء زر إنهاء الاختبار إذا كان السؤال الأخير
+            if (currentQuestionIndex === testQuestions.length - 1) {
+                nextQuestionBtn.style.display = 'none';
+                finishTestBtn.textContent = 'عرض النتيجة';
+            } else {
+                nextQuestionBtn.style.display = 'block';
+                finishTestBtn.textContent = 'إنهاء الاختبار';
+            }
+        }
+
+        // اختيار إجابة
+        function selectOption(e) {
+            // إلغاء تحديد الخيار السابق إذا كان موجودًا
+            if (selectedOption) {
+                selectedOption.classList.remove('selected');
+            }
+            
+            // تحديد الخيار الجديد
+            selectedOption = e.target;
+            selectedOption.classList.add('selected');
+            
+            // تمكين زر التالي
+            nextQuestionBtn.disabled = false;
+        }
+
+        // الانتقال إلى السؤال التالي
+        function nextQuestion() {
+            // حفظ إجابة المستخدم
+            if (selectedOption) {
+                userAnswers.push({
+                    question: testQuestions[currentQuestionIndex].question,
+                    userAnswer: selectedOption.dataset.answer,
+                    correctAnswer: testQuestions[currentQuestionIndex].answer
+                });
+                
+                // إلغاء تحديد الخيار
+                selectedOption.classList.remove('selected');
+                selectedOption = null;
+            }
+            
+            // الانتقال إلى السؤال التالي
+            currentQuestionIndex++;
+            
+            // إذا كان هناك المزيد من الأسئلة، عرض السؤال التالي
+            if (currentQuestionIndex < testQuestions.length) {
+                showQuestion();
+            }
+        }
+
+        // إنهاء الاختبار
+        function finishTest() {
+            // حفظ إجابة السؤال الأخير
+            if (selectedOption && currentQuestionIndex < testQuestions.length) {
+                userAnswers.push({
+                    question: testQuestions[currentQuestionIndex].question,
+                    userAnswer: selectedOption.dataset.answer,
+                    correctAnswer: testQuestions[currentQuestionIndex].answer
+                });
+            }
+            
+            // إيقاف المؤقت
+            clearInterval(timerInterval);
+            
+            // حساب النتيجة
+            calculateResults();
+            
+            // إخفاء عناصر الاختبار
+            currentQuestion.style.display = 'none';
+            nextQuestionBtn.style.display = 'none';
+            finishTestBtn.style.display = 'none';
+            
+            // عرض النتائج
+            testResults.style.display = 'block';
+        }
+
+        // بدء المؤقت
+        function startTimer() {
+            clearInterval(timerInterval);
+            updateTimerDisplay();
+            
+            timerInterval = setInterval(() => {
+                testTimeLeft--;
+                updateTimerDisplay();
+                
+                if (testTimeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        // تحديث عرض المؤقت
+        function updateTimerDisplay() {
+            const minutes = Math.floor(testTimeLeft / 60);
+            const seconds = testTimeLeft % 60;
+            testTimer.textContent = `الوقت: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // تغيير اللون عندما يقل الوقت عن دقيقة
+            if (testTimeLeft <= 60) {
+                testTimer.style.color = 'var(--accent-color)';
+            }
+        }
+
+        // حساب النتائج
+        function calculateResults() {
+            let correct = 0;
+            let wrong = 0;
+            
+            userAnswers.forEach(answer => {
+                if (answer.userAnswer === answer.correctAnswer) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+            
+            const scorePercentage = Math.round((correct / testQuestions.length) * 100);
+            
+            // عرض النتائج
+            totalQuestions.textContent = testQuestions.length;
+            correctAnswers.textContent = correct;
+            wrongAnswers.textContent = wrong;
+            percentage.textContent = `${scorePercentage}%`;
+            resultScore.textContent = `${scorePercentage}%`;
+        }
+
+        // إعادة الاختبار
+        function restartTest() {
+            startTest();
+        }
+
+        // تبديل وضع الليل
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            
+            // حفظ التفضيل في localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        // تغيير حجم الخط
+        function changeFontSize(size) {
+            switch(size) {
+                case 'small':
+                    document.body.style.fontSize = '14px';
+                    break;
+                case 'medium':
+                    document.body.style.fontSize = '16px';
+                    break;
+                case 'large':
+                    document.body.style.fontSize = '18px';
+                    break;
+            }
+            
+            // حفظ التفضيل في localStorage
+            localStorage.setItem('fontSize', size);
+        }
+
+        // تغيير لون السمة
+        function changeThemeColor(color) {
+            switch(color) {
+                case 'blue':
+                    document.documentElement.style.setProperty('--primary-color', '#3498db');
+                    break;
+                case 'green':
+                    document.documentElement.style.setProperty('--primary-color', '#2ecc71');
+                    break;
+                case 'red':
+                    document.documentElement.style.setProperty('--primary-color', '#e74c3c');
+                    break;
+                case 'purple':
+                    document.documentElement.style.setProperty('--primary-color', '#9b59b6');
+                    break;
+            }
+            
+            // حفظ التفضيل في localStorage
+            localStorage.setItem('themeColor', color);
+        }
+
+        // تحميل التطبيق
+        function downloadApp() {
+            // في الواقع، هذا سيقوم بتنزيل الملف المرفق
+            // هنا نضيف رسالة تأكيد فقط
+            alert('سيبدأ تحميل ملف التطبيق الآن. شكرًا لاستخدامك موقعنا!');
+        }
+
+        // عرض محتوى الزمن النحوي
+        function showTenseContent(tenseId) {
+            // إخفاء جميع محتويات الأزمنة أولاً
+            document.querySelectorAll('.tense-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // إظهار المحتوى المطلوب
+            document.getElementById(tenseId + 'Content').style.display = 'block';
+        }
+
+        // Event Listeners
+        useSiteBtn.addEventListener('click', () => {
+            mainScreen.style.display = 'none';
+            mainMenu.style.display = 'block';
+            sidebarToggle.style.display = 'none'; // إخفاء الأيقونة عند عرض القائمة الرئيسية الكبيرة
+            showTab(mainMenu);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            mainScreen.style.display = 'none';
+            mainMenu.style.display = 'none';
+            sidebarToggle.style.display = 'flex';
+            showTab(downloadTab);
+        });
+
+        searchInput.addEventListener('input', () => {
+            searchVerbs();
+            showSuggestions(searchInput.value);
+        });
+        
+        // إخفاء اقتراحات البحث عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (e.target !== searchInput) {
+                suggestionsContainer.style.display = 'none';
+            }
+        });
+        
+        // أحداث الاختبار
+        nextQuestionBtn.addEventListener('click', nextQuestion);
+        finishTestBtn.addEventListener('click', finishTest);
+        restartTestBtn.addEventListener('click', restartTest);
+        
+        // أحداث الشريط الجانبي
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+        
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+        
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const tabId = item.dataset.tab;
+                const tab = document.getElementById(tabId);
+                
+                // إخفاء القائمة الرئيسية الكبيرة
+                mainMenu.style.display = 'none';
+                
+                // إظهار التبويب المحدد
+                showTab(tab);
+                
+                // إغلاق الشريط الجانبي
+                sidebar.classList.remove('active');
+            });
+        });
+        
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const tabId = item.dataset.tab;
+                const tab = document.getElementById(tabId);
+                
+                // إخفاء القائمة الرئيسية الكبيرة
+                mainMenu.style.display = 'none';
+                
+                // إظهار التبويب المحدد
+                showTab(tab);
+                
+                // إظهار أيقونة القائمة
+                sidebarToggle.style.display = 'flex';
+            });
+        });
+        
+        // أحداث الإعدادات
+        darkModeToggle.addEventListener('change', () => {
+            toggleDarkMode();
+        });
+        
+        fontSizeSelect.addEventListener('change', (e) => {
+            changeFontSize(e.target.value);
+        });
+        
+        themeColorSelect.addEventListener('change', (e) => {
+            changeThemeColor(e.target.value);
+        });
+        
+        // حدث تحميل التطبيق
+        downloadAppBtn.addEventListener('click', downloadApp);
+
+        // أحداث القواعد النحوية
+        document.querySelectorAll('.tense-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const tenseId = card.dataset.tense;
+                showTenseContent(tenseId);
+            });
+        });
+
+        // حدث النقر على صف في جدول الأفعال
+        verbsTable.addEventListener('click', (e) => {
+            const row = e.target.closest('tr');
+            if (row) {
+                const verb = row.querySelector('.verb').textContent;
+                showVerbExamples(verb);
+                
+                // تمرير إلى أعلى الأمثلة
+                verbExamples.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // تهيئة الصفحة عند التحميل
+        window.addEventListener('DOMContentLoaded', () => {
+            populateVerbsTable();
+            mainMenu.style.display = 'none';
+            sidebarToggle.style.display = 'none';
+            showTab(searchTab);
+            
+            // إخفاء عناصر الاختبار في البداية
+            currentQuestion.style.display = 'none';
+            nextQuestionBtn.style.display = 'none';
+            finishTestBtn.style.display = 'none';
+            testResults.style.display = 'none';
+            
+            // تحميل التفضيلات من localStorage
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.checked = true;
+            }
+            
+            if (localStorage.getItem('fontSize')) {
+                changeFontSize(localStorage.getItem('fontSize'));
+                fontSizeSelect.value = localStorage.getItem('fontSize');
+            }
+            
+            if (localStorage.getItem('themeColor')) {
+                changeThemeColor(localStorage.getItem('themeColor'));
+                themeColorSelect.value = localStorage.getItem('themeColor');
+            }
+        });
+    </script>
+</body>
+</html>
+       
