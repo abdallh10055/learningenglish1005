@@ -3,832 +3,1343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قاموس تصريف الأفعال الإنجليزية</title>
+    <meta name="description" content="兀賮囟賱 鬲胤亘賷賯 賲噩丕賳賷 賱鬲氐乇賷賮 噩賲賷毓 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞 賲毓 丕賱鬲乇噩賲丞 丕賱毓乇亘賷丞">
+    <meta name="keywords" content="鬲氐乇賷賮 丕賱兀賮毓丕賱, 兀賮毓丕賱 廿賳噩賱賷夭賷丞, 鬲毓賱賲 丕賱廿賳噩賱賷夭賷丞, 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱卮丕匕丞">
+    <meta name="author" content="abdallh10055">
+    <title>賲賵賯毓 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
             --accent-color: #e74c3c;
-            --light-color: #f5f5f5;
+            --light-color: #f5f7fa;
             --dark-color: #333;
-            --menu-color: #2c3e50;
-            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --sidebar-width: 250px;
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --card-bg: white;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             transition: all 0.3s ease;
         }
         
-        /* الهيدر والقائمة */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
         }
         
-        .menu-btn {
-            font-size: 1.5rem;
+        /* 丕賱賵丕噩賴丞 丕賱乇卅賷爻賷丞 */
+        .main-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            background-image: url('丕賱賵丕噩賴賴-丕賱乇卅賷爻賷賴.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .main-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            z-index: 1;
+        }
+        
+        .main-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .main-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .welcome-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .main-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .main-btn {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .main-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 丕賱賯賵丕卅賲 賵丕賱鬲亘賵賷亘丕鬲 */
+        .menu-container {
+            display: none;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        
+        .menu-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .menu-item {
+            padding: 12px 15px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .menu-item:hover {
+            background-color: #e1e5eb;
+            transform: translateX(5px);
+        }
+        
+        /* 賲丨鬲賵賶 丕賱鬲亘賵賷亘丕鬲 */
+        .tab-content {
+            display: none;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        /* 丕賱卮乇賷胤 丕賱噩丕賳亘賷 */
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: none;
         }
         
         .sidebar {
             position: fixed;
             top: 0;
-            right: -300px;
-            width: 300px;
-            height: 100vh;
-            background-color: var(--menu-color);
-            color: white;
-            transition: all 0.3s ease;
-            z-index: 1001;
-            padding-top: 60px;
+            right: -100%;
+            width: var(--sidebar-width);
+            height: 100%;
+            background-color: var(--card-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            transition: right 0.3s ease;
             overflow-y: auto;
+            padding: 20px;
         }
         
         .sidebar.active {
             right: 0;
         }
         
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
         
-        .sidebar a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* الواجهة الرئيسية */
-        .main-content {
-            margin-top: 70px;
-            padding: 20px;
-            min-height: calc(100vh - 120px);
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .hero h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .sidebar-title {
+            font-size: 1.2rem;
             color: var(--secondary-color);
         }
         
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #555;
+        .sidebar-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--accent-color);
         }
         
-        .action-buttons {
+        .sidebar-menu {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 2rem;
+            flex-direction: column;
+            gap: 10px;
         }
         
-        .btn {
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: bold;
+        .sidebar-item {
+            padding: 10px 15px;
+            border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .btn-primary {
+        .sidebar-item:hover {
+            background-color: var(--light-color);
+        }
+        
+        .sidebar-item.active {
             background-color: var(--primary-color);
             color: white;
         }
         
-        .btn-secondary {
-            background-color: var(--accent-color);
-            color: white;
+        /* 賲丨鬲賵賶 丕賱亘丨孬 */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .search-box {
+            margin-bottom: 20px;
+            position: relative;
         }
         
-        /* واجهة تصريف الأفعال */
-        .verb-conjugation {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
+        #search {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: var(--card-bg);
+            color: var(--text-color);
         }
         
-        .verb-conjugation h2 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--light-color);
-            padding-bottom: 10px;
+        #search:focus {
+            border-color: var(--primary-color);
         }
         
-        .conjugation-table {
+        .suggestions-container {
+            position: absolute;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: var(--card-bg);
+            border: 1px solid #ddd;
+            border-radius: 0 0 5px 5px;
+            z-index: 100;
+            display: none;
+        }
+        
+        .suggestion-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .suggestion-item:hover {
+            background-color: var(--light-color);
+        }
+        
+        .verbs-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin-top: 20px;
         }
         
-        .conjugation-table th, 
-        .conjugation-table td {
+        .verbs-table th, .verbs-table td {
             padding: 12px 15px;
             text-align: right;
             border-bottom: 1px solid #ddd;
         }
         
-        .conjugation-table th {
+        .verbs-table th {
             background-color: var(--primary-color);
             color: white;
         }
         
-        .conjugation-table tr:hover {
-            background-color: #f5f5f5;
+        .verbs-table tr:hover {
+            background-color: var(--light-color);
         }
         
-        /* واجهة الاختبار */
-        .quiz-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
+        .verb {
+            font-weight: bold;
+            color: var(--accent-color);
         }
         
-        .quiz-header {
+        .note {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .verb-examples {
+            margin-top: 30px;
+        }
+        
+        .example-card {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .example-sentence {
+            margin-bottom: 10px;
+            padding-right: 10px;
+            border-right: 3px solid var(--primary-color);
+        }
+        
+        .example-translation {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        /* 賳馗丕賲 丕賱丕禺鬲亘丕乇 */
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .test-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
         }
         
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background-color: #eee;
-            border-radius: 5px;
+        .test-progress {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .test-timer {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .test-question {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
             margin-bottom: 20px;
-            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        .progress {
-            height: 100%;
-            background-color: var(--primary-color);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        
-        .quiz-question {
+        .question-text {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
         
-        .quiz-options {
-            margin-bottom: 20px;
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
         
-        .quiz-option {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            background-color: #f5f5f5;
-            border: none;
+        .option-btn {
+            padding: 12px 15px;
+            background-color: var(--card-bg);
+            border: 2px solid #ddd;
             border-radius: 5px;
             text-align: right;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .quiz-option:hover {
-            background-color: #e0e0e0;
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background-color: #eaf2f8;
         }
         
-        /* نتائج الاختبار */
-        .quiz-result {
-            text-align: center;
-            padding: 20px;
+        .option-btn.selected {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
         
-        .quiz-result h2 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        .option-btn.correct {
+            background-color: #2ecc71;
+            color: white;
+            border-color: #2ecc71;
         }
         
-        .quiz-score {
-            font-size: 1.5rem;
+        .option-btn.wrong {
+            background-color: #e74c3c;
+            color: white;
+            border-color: #e74c3c;
+        }
+        
+        .test-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .test-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-weight: bold;
-            margin: 20px 0;
+            transition: all 0.3s ease;
         }
         
-        .quiz-feedback {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+        .test-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
-        /* صفحة الاتصال */
-        .contact-container {
-            background-color: white;
-            border-radius: 10px;
+        .next-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .next-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .finish-btn {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .finish-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .test-results {
+            display: none;
+            background-color: var(--card-bg);
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .result-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .result-score {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
             margin: 20px 0;
-            box-shadow: var(--shadow);
+            color: var(--primary-color);
+        }
+        
+        .result-details {
+            margin-top: 20px;
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .restart-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .restart-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* 丕賱鬲亘賵賷亘丕鬲 丕賱兀禺乇賶 */
+        .settings-content, .grammar-content, .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .section-text {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .settings-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+        }
+        
+        .setting-label {
+            font-weight: bold;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
         }
         
         .contact-info {
-            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
         }
         
-        .contact-item {
+        .contact-card {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            gap: 15px;
         }
         
         .contact-icon {
-            margin-left: 15px;
             font-size: 1.5rem;
             color: var(--primary-color);
         }
         
-        /* صفحة الإعدادات */
-        .settings-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
+        .contact-text {
+            flex: 1;
         }
         
-        .setting-group {
+        .contact-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 鬲丨賲賷賱 丕賱鬲胤亘賷賯 */
+        .download-content {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .download-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
         
-        .setting-title {
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* 鬲亘賵賷亘 丕賱賯賵丕毓丿 丕賱賳丨賵賷丞 */
+        .tenses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tense-card {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .tense-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tense-title {
             font-weight: bold;
             margin-bottom: 10px;
             color: var(--secondary-color);
         }
         
-        .setting-options {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .setting-option {
-            display: flex;
-            align-items: center;
-        }
-        
-        /* الفوتر */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 15px;
+        .tense-content {
+            display: none;
             margin-top: 20px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid #ddd;
         }
         
-        /* تأثيرات للواجهة */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
+        .tense-example {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            border-right: 3px solid var(--primary-color);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .tense-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
         }
         
-        /* التكيف مع الشاشات الصغيرة */
+        .tense-table th, .tense-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: right;
+        }
+        
+        .tense-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tense-table tr:nth-child(even) {
+            background-color: var(--light-color);
+        }
+        
         @media (max-width: 768px) {
-            .action-buttons {
-                flex-direction: column;
+            .main-title {
+                font-size: 2rem;
             }
             
-            .btn {
+            .welcome-text {
+                font-size: 1rem;
+            }
+            
+            .main-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .main-btn {
                 width: 100%;
             }
             
             .sidebar {
-                width: 250px;
+                width: 80%;
             }
+            
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .tenses-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 賵囟毓 丕賱賱賷賱 */
+        body.dark-mode {
+            --bg-color: #2c3e50;
+            --text-color: #f5f7fa;
+            --card-bg: #34495e;
+            --light-color: #3d566e;
+            --secondary-color: #ecf0f1;
         }
     </style>
 </head>
 <body>
-    <!-- الهيدر والقائمة -->
-    <header>
-        <div class="menu-btn">☰</div>
-        <h1>قاموس الأفعال</h1>
-        <div></div> <!-- عنصر فارغ للمحاذاة -->
-    </header>
-    
-    <div class="sidebar">
-        <div class="close-btn">×</div>
-        <a href="#" class="menu-item" data-page="home">الرئيسية</a>
-        <a href="#" class="menu-item" data-page="verbs">تصريف الأفعال</a>
-        <a href="#" class="menu-item" data-page="quiz">اختبار الأفعال</a>
-        <a href="#" class="menu-item" data-page="contact">اتصل بنا</a>
-        <a href="#" class="menu-item" data-page="settings">الإعدادات</a>
-    </div>
-    
-    <!-- المحتوى الرئيسي -->
-    <div class="main-content">
-        <!-- الواجهة الرئيسية -->
-        <div id="home-page" class="page active fade-in">
-            <div class="hero">
-                <h1>مرحبًا بك في قاموس تصريف الأفعال الإنجليزية</h1>
-                <p>أداة متكاملة لتعلم تصريف الأفعال الإنجليزية الشاذة والعادية مع أمثلة واضحة واختبارات تفاعلية</p>
-                
-                <div class="action-buttons">
-                    <a href="#" class="btn btn-primary" id="use-site-btn">استخدام موقع الأفعال</a>
-                    <a href="#" class="btn btn-secondary" id="download-app-btn">تحميل تطبيق الأفعال</a>
-                </div>
+    <div class="container">
+        <!-- 夭乇 丕賱卮乇賷胤 丕賱噩丕賳亘賷 -->
+        <div class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <!-- 丕賱卮乇賷胤 丕賱噩丕賳亘賷 -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3 class="sidebar-title">丕賱賯丕卅賲丞 丕賱乇卅賷爻賷丞</h3>
+                <button class="sidebar-close" id="sidebarClose">&times;</button>
             </div>
-            
-            <div class="verb-conjugation">
-                <h2>أفعال شائعة</h2>
-                <table class="conjugation-table">
-                    <thead>
-                        <tr>
-                            <th>الفعل</th>
-                            <th>الماضي</th>
-                            <th>التصريف الثالث</th>
-                            <th>المعنى</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>go</td>
-                            <td>went</td>
-                            <td>gone</td>
-                            <td>يذهب</td>
-                        </tr>
-                        <tr>
-                            <td>eat</td>
-                            <td>ate</td>
-                            <td>eaten</td>
-                            <td>يأكل</td>
-                        </tr>
-                        <tr>
-                            <td>write</td>
-                            <td>wrote</td>
-                            <td>written</td>
-                            <td>يكتب</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="sidebar-menu">
+                <div class="sidebar-item" data-tab="searchTab"><i class="fas fa-search"></i> 亘丨孬</div>
+                <div class="sidebar-item" data-tab="testTab"><i class="fas fa-question-circle"></i> 丕禺鬲亘丕乇</div>
+                <div class="sidebar-item" data-tab="grammarTab"><i class="fas fa-book"></i> 卮乇丨 鬲氐乇賷賮 丕賱兀賮毓丕賱</div>
+                <div class="sidebar-item" data-tab="settingsTab"><i class="fas fa-cog"></i> 丕賱廿毓丿丕丿丕鬲</div>
+                <div class="sidebar-item" data-tab="contactTab"><i class="fas fa-envelope"></i> 丕鬲氐賱 亘賳丕</div>
+                <div class="sidebar-item" data-tab="downloadTab"><i class="fas fa-download"></i> 鬲丨賲賷賱 丕賱鬲胤亘賷賯</div>
             </div>
         </div>
         
-        <!-- واجهة تصريف الأفعال -->
-        <div id="verbs-page" class="page">
-            <div class="verb-conjugation">
-                <h2>تصريف الأفعال</h2>
+        <!-- 丕賱賵丕噩賴丞 丕賱乇卅賷爻賷丞 -->
+        <div class="main-screen" id="mainScreen">
+            <div class="main-content">
+                <h1 class="main-title">賲乇丨亘丕 亘賰賲 賮賷 賲賵賯毓 馃寪 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞</h1>
+                <p class="welcome-text">
+                    丕賱賲賵賯毓 賷毓乇囟 賰賱 鬲氐乇賷賮丕鬲 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞 丕賱卮丕匕丞 賵丕賱毓丕丿賷丞 賲毓 鬲乇噩賲鬲賴丕 賱賱毓乇亘賷丞.
+                    賷賲賰賳賰 丕賱亘丨孬 毓賳 兀賷 賮毓賱 賵賲毓乇賮丞 鬲氐乇賷賮丕鬲賴 賮賷 丕賱賲丕囟賷 賵丕賱鬲氐乇賷賮 丕賱孬丕賱孬貙 賰賲丕 賳賯丿賲 兀賲孬賱丞
+                    鬲賵囟賷丨賷丞 賱丕爻鬲禺丿丕賲 丕賱兀賮毓丕賱 賮賷 丕賱噩賲賱. 丕亘丿兀 乇丨賱鬲賰 賮賷 鬲毓賱賲 丕賱賱睾丞 丕賱廿賳噩賱賷夭賷丞 丕賱丌賳!
+                </p>
+                <div class="main-buttons">
+                    <button class="main-btn" id="useSiteBtn">丕爻鬲禺丿丕賲 賲賵賯毓 丕賱兀賮毓丕賱</button>
+                    <button class="main-btn" id="downloadBtn">鬲丨賲賷賱 丕賱鬲胤亘賷賯</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 賯丕卅賲丞 丕賱丕爻鬲禺丿丕賲 -->
+        <div class="menu-container" id="mainMenu">
+            <h2 class="menu-title">丕賱賯丕卅賲丞 丕賱乇卅賷爻賷丞</h2>
+            <div class="menu-items">
+                <div class="menu-item" data-tab="searchTab"><i class="fas fa-search"></i> 亘丨孬</div>
+                <div class="menu-item" data-tab="testTab"><i class="fas fa-question-circle"></i> 丕禺鬲亘丕乇</div>
+                <div class="menu-item" data-tab="grammarTab"><i class="fas fa-book"></i> 卮乇丨 鬲氐乇賷賮 丕賱兀賮毓丕賱</div>
+                <div class="menu-item" data-tab="settingsTab"><i class="fas fa-cog"></i> 丕賱廿毓丿丕丿丕鬲</div>
+                <div class="menu-item" data-tab="contactTab"><i class="fas fa-envelope"></i> 丕鬲氐賱 亘賳丕</div>
+                <div class="menu-item" data-tab="downloadTab"><i class="fas fa-download"></i> 鬲丨賲賷賱 丕賱鬲胤亘賷賯</div>
+            </div>
+        </div>
+        
+        <!-- 賲丨鬲賵賶 丕賱鬲亘賵賷亘丕鬲 -->
+        <div class="tab-content" id="searchTab">
+            <div class="search-container">
+                <h2 class="section-title">亘丨孬 毓賳 鬲氐乇賷賮 丕賱兀賮毓丕賱</h2>
                 <div class="search-box">
-                    <input type="text" id="verb-search" placeholder="ابحث عن فعل...">
-                    <button id="search-btn">بحث</button>
+                    <input type="text" id="search" placeholder="丕賰鬲亘 丕賱賮毓賱 兀賵 丕賱賲毓賳賶 丕賱毓乇亘賷 丕賱匕賷 鬲亘丨孬 毓賳賴...">
+                    <div class="suggestions-container" id="suggestionsContainer"></div>
+                </div>
+                <table class="verbs-table" id="verbsTable">
+                    <thead>
+                        <tr>
+                            <th>丕賱賮毓賱 (丕賱丨丕囟乇)</th>
+                            <th>丕賱賲丕囟賷</th>
+                            <th>丕賱鬲氐乇賷賮 丕賱孬丕賱孬</th>
+                            <th>丕賱賲毓賳賶 丕賱毓乇亘賷</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 爻賷鬲賲 賲賱丐賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                    </tbody>
+                </table>
+                
+                <div class="verb-examples" id="verbExamples">
+                    <!-- 爻賷鬲賲 賲賱丐賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 毓賳丿 丕賱亘丨孬 毓賳 賮毓賱 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="testTab">
+            <div class="test-container">
+                <div class="test-header">
+                    <div class="test-progress" id="testProgress">丕賱爻丐丕賱 1 賲賳 10</div>
+                    <div class="test-timer" id="testTimer">丕賱賵賯鬲: 05:00</div>
                 </div>
                 
-                <div id="verb-result">
-                    <h3 id="verb-name">play</h3>
-                    <table class="conjugation-table">
-                        <tr>
-                            <td>المصدر</td>
-                            <td id="base-form">play</td>
-                        </tr>
-                        <tr>
-                            <td>الماضي</td>
-                            <td id="past-form">played</td>
-                        </tr>
-                        <tr>
-                            <td>التصريف الثالث</td>
-                            <td id="participle-form">played</td>
-                        </tr>
-                        <tr>
-                            <td>المضارع المستمر</td>
-                            <td id="continuous-form">playing</td>
-                        </tr>
-                    </table>
+                <div class="test-question" id="currentQuestion">
+                    <div class="question-text">賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'go' 賮賷 丕賱賲丕囟賷責</div>
+                    <div class="options-container" id="optionsContainer">
+                        <button class="option-btn" data-answer="went">went</button>
+                        <button class="option-btn" data-answer="gone">gone</button>
+                        <button class="option-btn" data-answer="goed">goed</button>
+                        <button class="option-btn" data-answer="goes">goes</button>
+                    </div>
+                </div>
+                
+                <div class="test-controls">
+                    <button class="test-btn next-btn" id="nextQuestionBtn" disabled>丕賱鬲丕賱賷</button>
+                    <button class="test-btn finish-btn" id="finishTestBtn">廿賳賴丕亍 丕賱丕禺鬲亘丕乇</button>
+                </div>
+                
+                <div class="test-results" id="testResults">
+                    <h3 class="result-title">賳鬲賷噩丞 丕賱丕禺鬲亘丕乇</h3>
+                    <div class="result-score" id="resultScore">80%</div>
                     
-                    <h3>أمثلة:</h3>
-                    <ul id="verb-examples">
-                        <li>I play football every weekend.</li>
-                        <li>Yesterday, I played tennis.</li>
-                        <li>I have played this game before.</li>
+                    <div class="result-details" id="resultDetails">
+                        <div class="result-item">
+                            <span>毓丿丿 丕賱兀爻卅賱丞:</span>
+                            <span id="totalQuestions">10</span>
+                        </div>
+                        <div class="result-item">
+                            <span>丕賱廿噩丕亘丕鬲 丕賱氐丨賷丨丞:</span>
+                            <span id="correctAnswers">8</span>
+                        </div>
+                        <div class="result-item">
+                            <span>丕賱廿噩丕亘丕鬲 丕賱禺丕胤卅丞:</span>
+                            <span id="wrongAnswers">2</span>
+                        </div>
+                        <div class="result-item">
+                            <span>丕賱賳爻亘丞 丕賱賲卅賵賷丞:</span>
+                            <span id="percentage">80%</span>
+                        </div>
+                    </div>
+                    
+                    <button class="restart-btn" id="restartTestBtn">廿毓丕丿丞 丕賱丕禺鬲亘丕乇</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="grammarTab">
+            <div class="grammar-content">
+                <h2 class="section-title">卮乇丨 鬲氐乇賷賮 丕賱兀賮毓丕賱 賵丕賱兀夭賲賳丞 賮賷 丕賱賱睾丞 丕賱廿賳噩賱賷夭賷丞</h2>
+                <p class="section-text">賮賷 賴匕丕 丕賱賯爻賲 爻鬲噩丿 卮乇丨賸丕 賲賮氐賱賸丕 賱賰賱 丕賱兀夭賲賳丞 賮賷 丕賱賱睾丞 丕賱廿賳噩賱賷夭賷丞 賲毓 兀賲孬賱丞 鬲賵囟賷丨賷丞 賱賰賱 丨丕賱丞.</p>
+                
+                <div class="tenses-container">
+                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱亘爻賷胤 -->
+                    <div class="tense-card" data-tense="presentSimple">
+                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱亘爻賷胤 (Present Simple)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱毓丕丿丕鬲 賵丕賱兀丨丿丕孬 丕賱賲鬲賰乇乇丞 賵丕賱丨賯丕卅賯 丕賱毓丕賲丞.</div>
+                    </div>
+                    
+                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱賲爻鬲賲乇 -->
+                    <div class="tense-card" data-tense="presentContinuous">
+                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱賲爻鬲賲乇 (Present Continuous)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 鬲丨丿孬 丕賱丌賳 兀賵 丕賱賲爻鬲賯亘賱 丕賱賲禺胤胤 賱賴.</div>
+                    </div>
+                    
+                    <!-- 夭賲賳 丕賱賲丕囟賷 丕賱亘爻賷胤 -->
+                    <div class="tense-card" data-tense="pastSimple">
+                        <div class="tense-title">夭賲賳 丕賱賲丕囟賷 丕賱亘爻賷胤 (Past Simple)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 丨丿孬鬲 賵丕賳鬲賴鬲 賮賷 丕賱賲丕囟賷.</div>
+                    </div>
+                    
+                    <!-- 夭賲賳 丕賱賲丕囟賷 丕賱賲爻鬲賲乇 -->
+                    <div class="tense-card" data-tense="pastContinuous">
+                        <div class="tense-title">夭賲賳 丕賱賲丕囟賷 丕賱賲爻鬲賲乇 (Past Continuous)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 賰丕賳鬲 賲爻鬲賲乇丞 賮賷 賵賯鬲 賲毓賷賳 賮賷 丕賱賲丕囟賷.</div>
+                    </div>
+                    
+                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 -->
+                    <div class="tense-card" data-tense="presentPerfect">
+                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 (Present Perfect)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 丨丿孬鬲 賮賷 丕賱賲丕囟賷 賵賱賴丕 鬲兀孬賷乇 賮賷 丕賱丨丕囟乇.</div>
+                    </div>
+                    
+                    <!-- 夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 丕賱賲爻鬲賲乇 -->
+                    <div class="tense-card" data-tense="presentPerfectContinuous">
+                        <div class="tense-title">夭賲賳 丕賱賲囟丕乇毓 丕賱鬲丕賲 丕賱賲爻鬲賲乇 (Present Perfect Continuous)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丕賱兀丨丿丕孬 丕賱鬲賷 亘丿兀鬲 賮賷 丕賱賲丕囟賷 賵賲爻鬲賲乇丞 丨鬲賶 丕賱丌賳.</div>
+                    </div>
+                    
+                    <!-- 夭賲賳 丕賱賲丕囟賷 丕賱鬲丕賲 -->
+                    <div class="tense-card" data-tense="pastPerfect">
+                        <div class="tense-title">夭賲賳 丕賱賲丕囟賷 丕賱鬲丕賲 (Past Perfect)</div>
+                        <div class="section-text">賷爻鬲禺丿賲 賱賱鬲毓亘賷乇 毓賳 丨丿孬 賵賯毓 賯亘賱 丨丿孬 丌禺乇 賮賷 丕賱賲丕囟賷.</div>
+                    </div>
+                    
+                    <!-- 氐賷睾丞 丕賱賲亘賳賷 賱賱賲毓賱賵賲 賵丕賱賲亘賳賷 賱賱賲噩賴賵賱 -->
+                    <div class="tense-card" data-tense="activePassive">
+                        <div class="tense-title">氐賷睾丞 丕賱賲亘賳賷 賱賱賲毓賱賵賲 賵丕賱賲亘賳賷 賱賱賲噩賴賵賱</div>
+                        <div class="section-text">卮乇丨 丕賱賮乇賯 亘賷賳 丕賱氐賷睾鬲賷賳 賵賰賷賮賷丞 丕賱鬲丨賵賷賱 亘賷賳賴賲丕.</div>
+                    </div>
+                </div>
+                
+                <!-- 賲丨鬲賵賶 丕賱兀夭賲賳丞 (爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲) -->
+                <div id="presentSimpleContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="presentContinuousContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="pastSimpleContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="pastContinuousContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="presentPerfectContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="presentPerfectContinuousContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="pastPerfectContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+                
+                <div id="activePassiveContent" class="tense-content">
+                    <!-- 爻賷鬲賲 鬲毓亘卅鬲賴 亘丕賱噩丕賮丕爻賰乇賷亘鬲 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="settingsTab">
+            <div class="settings-content">
+                <h2 class="section-title">丕賱廿毓丿丕丿丕鬲</h2>
+                <p class="section-text">賴賳丕 賷賲賰賳賰 鬲毓丿賷賱 廿毓丿丕丿丕鬲 丕賱賲賵賯毓 丨爻亘 鬲賮囟賷賱丕鬲賰 丕賱卮禺氐賷丞.</p>
+                
+                <div class="settings-options">
+                    <div class="setting-item">
+                        <span class="setting-label">賵囟毓 丕賱賱賷賱</span>
+                        <label class="switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <span class="setting-label">廿卮毓丕乇丕鬲 丕賱丕禺鬲亘丕乇</span>
+                        <label class="switch">
+                            <input type="checkbox" id="testNotificationsToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <span class="setting-label">丨噩賲 丕賱禺胤</span>
+                        <select id="fontSizeSelect">
+                            <option value="small">氐睾賷乇</option>
+                            <option value="medium" selected>賲鬲賵爻胤</option>
+                            <option value="large">賰亘賷乇</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <span class="setting-label">賱賵賳 丕賱爻賲丞</span>
+                        <select id="themeColorSelect">
+                            <option value="blue" selected>兀夭乇賯</option>
+                            <option value="green">兀禺囟乇</option>
+                            <option value="red">兀丨賲乇</option>
+                            <option value="purple">亘賳賮爻噩賷</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="contactTab">
+            <div class="contact-content">
+                <h2 class="section-title">丕鬲氐賱 亘賳丕</h2>
+                <p class="section-text">賱賱丕爻鬲賮爻丕乇丕鬲 兀賵 丕賱賲賯鬲乇丨丕鬲貙 賷賲賰賳賰 丕賱鬲賵丕氐賱 賲毓賳丕 毓亘乇 丕賱賵爻丕卅賱 丕賱鬲丕賱賷丞:</p>
+                
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-title">丕賱亘乇賷丿 丕賱廿賱賰鬲乇賵賳賷</div>
+                            <div>bdallhqrytm41@gmail.com</div>
+                            <div>bdallhqrytm3@gmail.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-title">丕賱賴丕鬲賮</div>
+                            <div>+201040338275</div>
+                            <div>+201123493976</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="downloadTab">
+            <div class="download-content">
+                <div class="download-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h2 class="section-title">鬲丨賲賷賱 鬲胤亘賷賯 鬲氐乇賷賮 丕賱兀賮毓丕賱</h2>
+                <p class="section-text">賯賲 亘鬲賳夭賷賱 鬲胤亘賷賯賳丕 賱賱丨氐賵賱 毓賱賶 鬲噩乇亘丞 兀賮囟賱 賲毓 鬲氐乇賷賮 丕賱兀賮毓丕賱 丕賱廿賳噩賱賷夭賷丞 亘丿賵賳 丕賱丨丕噩丞 賱賱丕鬲氐丕賱 亘丕賱廿賳鬲乇賳鬲.</p>
+                
+                <a href="賵丕噩賴丕鬲 丕賱鬲胤亘賷賯.zip" class="download-btn" id="downloadAppBtn" download>
+                    <i class="fas fa-download"></i> 鬲丨賲賷賱 丕賱鬲胤亘賷賯 丕賱丌賳
+                </a>
+                
+                <div class="section-text" style="margin-top: 30px;">
+                    <h3>賲賲賷夭丕鬲 丕賱鬲胤亘賷賯:</h3>
+                    <ul style="text-align: right; margin-right: 20px; line-height: 2;">
+                        <li>毓賲賱 丿賵賳 丕賱丨丕噩丞 賱賱廿賳鬲乇賳鬲</li>
+                        <li>賵丕噩賴丞 賲爻鬲禺丿賲 爻賴賱丞 賵亘爻賷胤丞</li>
+                        <li>兀賰孬乇 賲賳 500 賮毓賱 賲毓 鬲氐乇賷賮丕鬲賴丕</li>
+                        <li>兀賲孬賱丞 氐賵鬲賷丞 賱賱賳胤賯 丕賱氐丨賷丨</li>
+                        <li>丕禺鬲亘丕乇丕鬲 鬲賮丕毓賱賷丞 賱鬲丨爻賷賳 賲爻鬲賵丕賰</li>
                     </ul>
                 </div>
             </div>
         </div>
-        
-        <!-- واجهة الاختبار -->
-        <div id="quiz-page" class="page">
-            <div class="quiz-container">
-                <div class="quiz-header">
-                    <h2>اختبار الأفعال</h2>
-                    <div id="quiz-score">النقاط: 0/0</div>
-                </div>
-                
-                <div class="progress-bar">
-                    <div class="progress" id="quiz-progress"></div>
-                </div>
-                
-                <div id="quiz-screen">
-                    <div class="quiz-question" id="quiz-question">
-                        ما هو تصريف الفعل "go" في الماضي؟
-                    </div>
-                    
-                    <div class="quiz-options">
-                        <button class="quiz-option">goed</button>
-                        <button class="quiz-option">went</button>
-                        <button class="quiz-option">gone</button>
-                        <button class="quiz-option">goes</button>
-                    </div>
-                    
-                    <button id="next-question-btn" class="btn btn-primary" disabled>السؤال التالي</button>
-                </div>
-                
-                <div id="result-screen" style="display: none;">
-                    <div class="quiz-result">
-                        <h2>أحسنت!</h2>
-                        <div class="quiz-score" id="final-score">نقاطك: 7/10</div>
-                        <div class="quiz-feedback" id="quiz-feedback">
-                            أداء جيد، ولكن يمكنك التحسن أكثر!
-                        </div>
-                        <button id="try-again-btn" class="btn btn-primary">حاول مرة أخرى</button>
-                        <button id="new-quiz-btn" class="btn btn-secondary">اختبار جديد</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- صفحة الاتصال -->
-        <div id="contact-page" class="page">
-            <div class="contact-container">
-                <h2>اتصل بنا</h2>
-                <p>يسعدنا تواصلك معنا لأي استفسارات أو مقترحات</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">✉️</span>
-                        <span>bdallhqrytm41@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">✉️</span>
-                        <span>bdallhqrytm3@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <span>+201040338275</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <span>01123493976</span>
-                    </div>
-                </div>
-                
-                <div class="feedback-form">
-                    <h3>أرسل ملاحظاتك</h3>
-                    <textarea id="feedback-message" rows="5" placeholder="اكتب ملاحظاتك هنا..."></textarea>
-                    <button id="send-feedback-btn" class="btn btn-primary">إرسال</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- صفحة الإعدادات -->
-        <div id="settings-page" class="page">
-            <div class="settings-container">
-                <h2>الإعدادات</h2>
-                
-                <div class="setting-group">
-                    <div class="setting-title">المظهر</div>
-                    <div class="setting-options">
-                        <div class="setting-option">
-                            <input type="radio" id="theme-light" name="theme" checked>
-                            <label for="theme-light">فاتح</label>
-                        </div>
-                        <div class="setting-option">
-                            <input type="radio" id="theme-dark" name="theme">
-                            <label for="theme-dark">غامق</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="setting-group">
-                    <div class="setting-title">حجم الخط</div>
-                    <div class="setting-options">
-                        <div class="setting-option">
-                            <input type="radio" id="font-small" name="font-size">
-                            <label for="font-small">صغير</label>
-                        </div>
-                        <div class="setting-option">
-                            <input type="radio" id="font-medium" name="font-size" checked>
-                            <label for="font-medium">متوسط</label>
-                        </div>
-                        <div class="setting-option">
-                            <input type="radio" id="font-large" name="font-size">
-                            <label for="font-large">كبير</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="setting-group">
-                    <div class="setting-title">لون السمة</div>
-                    <div class="setting-options">
-                        <div class="setting-option">
-                            <input type="radio" id="color-blue" name="theme-color" checked>
-                            <label for="color-blue">أزرق</label>
-                        </div>
-                        <div class="setting-option">
-                            <input type="radio" id="color-green" name="theme-color">
-                            <label for="color-green">أخضر</label>
-                        </div>
-                        <div class="setting-option">
-                            <input type="radio" id="color-purple" name="theme-color">
-                            <label for="color-purple">بنفسجي</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <button id="save-settings-btn" class="btn btn-primary">حفظ الإعدادات</button>
-            </div>
-        </div>
     </div>
-    
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2023 قاموس تصريف الأفعال الإنجليزية</p>
-    </footer>
-    
+
     <script>
-        // التحكم في القائمة الجانبية
-        const menuBtn = document.querySelector('.menu-btn');
-        const sidebar = document.querySelector('.sidebar');
-        const closeBtn = document.querySelector('.close-btn');
-        const menuItems = document.querySelectorAll('.menu-item');
-        const pages = document.querySelectorAll('.page');
-        
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.add('active');
-        });
-        
-        closeBtn.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-        });
-        
-        menuItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pageId = item.getAttribute('data-page') + '-page';
-                
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                    if(page.id === pageId) {
-                        page.classList.add('active');
-                    }
-                });
-                
-                sidebar.classList.remove('active');
-            });
-        });
-        
-        // التحكم في الأزرار الرئيسية
-        document.getElementById('use-site-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById('verbs-page').classList.add('active');
-        });
-        
-        document.getElementById('download-app-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('سيتم تحميل التطبيق قريبًا!');
-            // هنا يمكنك إضافة كود التحميل الفعلي
-            // window.location.href = 'path/to/app.apk';
-        });
-        
-        // محاكاة اختبار الأفعال
-        const quizQuestions = [
+        // 賯丕賲賵爻 丕賱兀賮毓丕賱
+        const verbsDictionary = {
+            "act": {"past": "acted", "past_participle": "acted", "arabic": "賷賲孬賱/賷鬲氐乇賮"},
+            "add": {"past": "added", "past_participle": "added", "arabic": "賷囟賷賮"},
+            "agree": {"past": "agreed", "past_participle": "agreed", "arabic": "賷賵丕賮賯"},
+            "allow": {"past": "allowed", "past_participle": "allowed", "arabic": "賷爻賲丨"},
+            "answer": {"past": "answered", "past_participle": "answered", "arabic": "賷噩賷亘"},
+            "arrive": {"past": "arrived", "past_participle": "arrived", "arabic": "賷氐賱"},
+            "ask": {"past": "asked", "past_participle": "asked", "arabic": "賷爻兀賱"},
+            "awake": {"past": "awoke", "past_participle": "awoken", "arabic": "賷爻鬲賷賯馗", "note": "賳丕丿乇貙 丕賱兀賮囟賱 丕爻鬲禺丿丕賲 wake"},
+            "back": {"past": "backed", "past_participle": "backed", "arabic": "賷丿毓賲/賷鬲乇丕噩毓"},
+            "bake": {"past": "baked", "past_participle": "baked", "arabic": "賷禺亘夭"},
+            "be": {"past": "was/were", "past_participle": "been", "arabic": "賷賰賵賳", "note": "兀賴賲 賮毓賱 賮賷 丕賱廿賳噩賱賷夭賷丞"},
+            "bear": {"past": "bore", "past_participle": "borne", "arabic": "賷鬲丨賲賱/賷賵賱丿", "note": "賷爻鬲禺丿賲 'born' 賱賱賲賵賱賵丿 賮賯胤"},
+            "become": {"past": "became", "past_participle": "become", "arabic": "賷氐亘丨"},
+            "begin": {"past": "began", "past_participle": "begun", "arabic": "賷亘丿兀"},
+            "believe": {"past": "believed", "past_participle": "believed", "arabic": "賷氐丿賯/賷毓鬲賯丿"},
+            "break": {"past": "broke", "past_participle": "broken", "arabic": "賷賰爻乇"},
+            "bring": {"past": "brought", "past_participle": "brought", "arabic": "賷兀鬲賷 亘賭"},
+            "build": {"past": "built", "past_participle": "built", "arabic": "賷亘賳賷"},
+            "buy": {"past": "bought", "past_participle": "bought", "arabic": "賷卮鬲乇賷"},
+            "catch": {"past": "caught", "past_participle": "caught", "arabic": "賷賲爻賰"},
+            "choose": {"past": "chose", "past_participle": "chosen", "arabic": "賷禺鬲丕乇"},
+            "come": {"past": "came", "past_participle": "come", "arabic": "賷兀鬲賷"},
+            "cut": {"past": "cut", "past_participle": "cut", "arabic": "賷賯胤毓"},
+            "do": {"past": "did", "past_participle": "done", "arabic": "賷賮毓賱"},
+            "draw": {"past": "drew", "past_participle": "drawn", "arabic": "賷乇爻賲"},
+            "dream": {"past": "dreamed/dreamt", "past_participle": "dreamed/dreamt", "arabic": "賷丨賱賲", "note": "dreamt (亘乇賷胤丕賳賷)"},
+            "drink": {"past": "drank", "past_participle": "drunk", "arabic": "賷卮乇亘"},
+            "drive": {"past": "drove", "past_participle": "driven", "arabic": "賷賯賵丿"},
+            "eat": {"past": "ate", "past_participle": "eaten", "arabic": "賷兀賰賱"},
+            "fall": {"past": "fell", "past_participle": "fallen", "arabic": "賷爻賯胤"},
+            "feel": {"past": "felt", "past_participle": "felt", "arabic": "賷卮毓乇"},
+            "fight": {"past": "fought", "past_participle": "fought", "arabic": "賷賯丕鬲賱"},
+            "find": {"past": "found", "past_participle": "found", "arabic": "賷噩丿"},
+            "fly": {"past": "flew", "past_participle": "flown", "arabic": "賷胤賷乇"},
+            "forget": {"past": "forgot", "past_participle": "forgotten", "arabic": "賷賳爻賶"},
+            "get": {"past": "got", "past_participle": "gotten/got", "arabic": "賷丨氐賱", "note": "gotten (兀賲乇賷賰賷)"},
+            "give": {"past": "gave", "past_participle": "given", "arabic": "賷毓胤賷"},
+            "go": {"past": "went", "past_participle": "gone", "arabic": "賷匕賴亘"},
+            "have": {"past": "had", "past_participle": "had", "arabic": "賷賲賱賰"},
+            "hear": {"past": "heard", "past_participle": "heard", "arabic": "賷爻賲毓"},
+            "hide": {"past": "hid", "past_participle": "hidden", "arabic": "賷禺鬲亘卅"},
+            "hold": {"past": "held", "past_participle": "held", "arabic": "賷賲爻賰"},
+            "keep": {"past": "kept", "past_participle": "kept", "arabic": "賷丨鬲賮馗"},
+            "know": {"past": "knew", "past_participle": "known", "arabic": "賷毓乇賮"},
+            "leave": {"past": "left", "past_participle": "left", "arabic": "賷睾丕丿乇/賷鬲乇賰"},
+            "lose": {"past": "lost", "past_participle": "lost", "arabic": "賷賮賯丿"},
+            "make": {"past": "made", "past_participle": "made", "arabic": "賷氐賳毓"},
+            "meet": {"past": "met", "past_participle": "met", "arabic": "賷賱鬲賯賷"},
+            "read": {"past": "read", "past_participle": "read", "arabic": "賷賯乇兀"},
+            "run": {"past": "ran", "past_participle": "run", "arabic": "賷噩乇賷"},
+            "say": {"past": "said", "past_participle": "said", "arabic": "賷賯賵賱"},
+            "see": {"past": "saw", "past_participle": "seen", "arabic": "賷乇賶"},
+            "sing": {"past": "sang", "past_participle": "sung", "arabic": "賷睾賳賷"},
+            "speak": {"past": "spoke", "past_participle": "spoken", "arabic": "賷鬲賰賱賲"},
+            "take": {"past": "took", "past_participle": "taken", "arabic": "賷兀禺匕"},
+            "write": {"past": "wrote", "past_participle": "written", "arabic": "賷賰鬲亘"}
+        };
+
+        // 兀爻卅賱丞 丕賱丕禺鬲亘丕乇
+        const testQuestions = [
             {
-                question: "ما هو تصريف الفعل 'go' في الماضي؟",
-                options: ["goed", "went", "gone", "goes"],
-                answer: 1
+                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'go' 賮賷 丕賱賲丕囟賷責",
+                options: ["went", "gone", "goed", "goes"],
+                answer: "went"
             },
             {
-                question: "ما هو التصريف الثالث للفعل 'eat'؟",
-                options: ["eat", "ate", "eaten", "eating"],
-                answer: 2
+                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'eat'責",
+                options: ["ate", "eaten", "eat", "eated"],
+                answer: "eaten"
             },
             {
-                question: "ما هو تصريف الفعل 'write' في الماضي؟",
-                options: ["writed", "wrote", "written", "write"],
-                answer: 1
+                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'write' 賮賷 丕賱賲丕囟賷責",
+                options: ["wrote", "written", "writed", "write"],
+                answer: "wrote"
+            },
+            {
+                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'break'責",
+                options: ["broke", "broken", "breaked", "break"],
+                answer: "broken"
+            },
+            {
+                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'sing' 賮賷 丕賱賲丕囟賷責",
+                options: ["sang", "sung", "singed", "song"],
+                answer: "sang"
+            },
+            {
+                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'take'責",
+                options: ["took", "taken", "taked", "take"],
+                answer: "taken"
+            },
+            {
+                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'drink' 賮賷 丕賱賲丕囟賷責",
+                options: ["drank", "drunk", "drinked", "drink"],
+                answer: "drank"
+            },
+            {
+                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'see'責",
+                options: ["saw", "seen", "seed", "see"],
+                answer: "seen"
+            },
+            {
+                question: "賲丕 賴賵 鬲氐乇賷賮 丕賱賮毓賱 'bring' 賮賷 丕賱賲丕囟賷責",
+                options: ["brought", "bringed", "brang", "bring"],
+                answer: "brought"
+            },
+            {
+                question: "賲丕 賴賵 丕賱鬲氐乇賷賮 丕賱孬丕賱孬 賱賱賮毓賱 'choose'責",
+                options: ["chose", "chosen", "choosed", "choose"],
+                answer: "chosen"
             }
         ];
+
+        // DOM Elements
+        const mainScreen = document.getElementById('mainScreen');
+        const mainMenu = document.getElementById('mainMenu');
+        const useSiteBtn = document.getElementById('useSiteBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const searchTab = document.getElementById('searchTab');
+        const testTab = document.getElementById('testTab');
+        const grammarTab = document.getElementById('grammarTab');
+        const settingsTab = document.getElementById('settingsTab');
+        const contactTab = document.getElementById('contactTab');
+        const downloadTab = document.getElementById('downloadTab');
+        const searchInput = document.getElementById('search');
+        const suggestionsContainer = document.getElementById('suggestionsContainer');
+        const verbsTable = document.getElementById('verbsTable').getElementsByTagName('tbody')[0];
+        const verbExamples = document.getElementById('verbExamples');
         
-        let currentQuestion = 0;
-        let score = 0;
+        // 毓賳丕氐乇 丕賱丕禺鬲亘丕乇
+        const testProgress = document.getElementById('testProgress');
+        const testTimer = document.getElementById('testTimer');
+        const currentQuestion = document.getElementById('currentQuestion');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+        const finishTestBtn = document.getElementById('finishTestBtn');
+        const testResults = document.getElementById('testResults');
+        const resultScore = document.getElementById('resultScore');
+        const totalQuestions = document.getElementById('totalQuestions');
+        const correctAnswers = document.getElementById('correctAnswers');
+        const wrongAnswers = document.getElementById('wrongAnswers');
+        const percentage = document.getElementById('percentage');
+        const restartTestBtn = document.getElementById('restartTestBtn');
         
-        function startQuiz() {
-            currentQuestion = 0;
-            score = 0;
-            document.getElementById('quiz-screen').style.display = 'block';
-            document.getElementById('result-screen').style.display = 'none';
-            showQuestion();
-        }
+        // 丕賱卮乇賷胤 丕賱噩丕賳亘賷
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebarClose');
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        const menuItems = document.querySelectorAll('.menu-item');
         
-        function showQuestion() {
-            const question = quizQuestions[currentQuestion];
-            document.getElementById('quiz-question').textContent = question.question;
-            
-            const options = document.querySelectorAll('.quiz-option');
-            options.forEach((option, index) => {
-                option.textContent = question.options[index];
-                option.onclick = () => selectAnswer(index);
+        // 丕賱廿毓丿丕丿丕鬲
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const testNotificationsToggle = document.getElementById('testNotificationsToggle');
+        const fontSizeSelect = document.getElementById('fontSizeSelect');
+        const themeColorSelect = document.getElementById('themeColorSelect');
+        
+        // 鬲丨賲賷賱 丕賱鬲胤亘賷賯
+        const downloadAppBtn = document.getElementById('downloadAppBtn');
+
+        // 賲鬲睾賷乇丕鬲 丕賱丕禺鬲亘丕乇
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let testTimeLeft = 300; // 5 丿賯丕卅賯 亘丕賱孬賵丕賳賷
+        let timerInterval;
+        let selectedOption = null;
+
+        // 鬲毓亘卅丞 噩丿賵賱 丕賱兀賮毓丕賱
+        function populateVerbsTable() {
+            verbsTable.innerHTML = '';
+            Object.entries(verbsDictionary).forEach(([verb, data]) => {
+                const row = verbsTable.insertRow();
+                row.innerHTML = `
+                    <td class="verb">${verb}</td>
+                    <td>${data.past}</td>
+                    <td>${data.past_participle}</td>
+                    <td>${data.arabic} ${data.note ? `<span class="note">(${data.note})</span>` : ''}</td>
+                `;
             });
-            
-            document.getElementById('next-question-btn').disabled = true;
-            document.getElementById('quiz-score').textContent = `النقاط: ${score}/${currentQuestion}`;
-            document.getElementById('quiz-progress').style.width = `${(currentQuestion / quizQuestions.length) * 100}%`;
         }
-        
-        function selectAnswer(selectedIndex) {
-            const question = quizQuestions[currentQuestion];
-            const options = document.querySelectorAll('.quiz-option');
+
+        // 毓乇囟 兀賲孬賱丞 賱賱賮毓賱
+        function showVerbExamples(verb) {
+            const verbData = verbsDictionary[verb];
+            if (!verbData) return;
             
-            options.forEach(option => {
-                option.disabled = true;
-            });
+            document.getElementById('currentVerb').textContent = verb;
             
-            if(selectedIndex === question.answer) {
-                options[selectedIndex].style.backgroundColor = '#4CAF50';
-                options[selectedIndex].style.color = 'white';
-                score++;
-            } else {
-                options[selectedIndex].style.backgroundColor = '#f44336';
-                options[selectedIndex].style.color = 'white';
-                options[question.answer].style.backgroundColor = '#4CAF50';
-                options[question.answer].style.color = 'white';
-            }
-            
-            document.getElementById('next-question-btn').disabled = false;
-            document.getElementById('quiz-score').textContent = `النقاط: ${score}/${currentQuestion + 1}`;
-        }
-        
-        document.getElementById('next-question-btn').addEventListener('click', () => {
-            currentQuestion++;
-            
-            if(currentQuestion < quizQuestions.length) {
-                showQuestion();
-            } else {
-                showResults();
-            }
-        });
-        
-        function showResults() {
-            document.getElementById('quiz-screen').style.display = 'none';
-            document.getElementById('result-screen').style.display = 'block';
-            
-            document.getElementById('final-score').textContent = `نقاطك: ${score}/${quizQuestions.length}`;
-            
-            const percentage = (score / quizQuestions.length) * 100;
-            let feedback = '';
-            
-            if(percentage >= 80) {
-                feedback = 'أداء ممتاز! أنت متقن للأفعال الشاذة.';
-            } else if(percentage >= 50) {
-                feedback = 'أداء جيد، ولكن يمكنك التحسن أكثر!';
-            } else {
-                feedback = 'تحتاج إلى مزيد من الممارسة. استمر في التعلم!';
-            }
-            
-            document.getElementById('quiz-feedback').textContent = feedback;
-            document.getElementById('quiz-progress').style.width = '100%';
-        }
-        
-        document.getElementById('try-again-btn').addEventListener('click', startQuiz);
-        document.getElementById('new-quiz-btn').addEventListener('click', () => {
-            // يمكنك إضافة المزيد من الأسئلة هنا
-            startQuiz();
-        });
-        
-        // بدء الاختبار عند الدخول إلى الصفحة
-        document.getElementById('quiz-page').addEventListener('click', startQuiz, { once: true });
-        
-        // إرسال الملاحظات
-        document.getElementById('send-feedback-btn').addEventListener('click', () => {
-            const feedback = document.getElementById('feedback-message').value;
-            if(feedback.trim() === '') {
-                alert('الرجاء إدخال ملاحظاتك قبل الإرسال');
-                return;
-            }
-            
-            alert('شكرًا لك على ملاحظاتك القيمة! سنقوم بمراجعتها قريبًا.');
-            document.getElementById('feedback-message').value = '';
-        });
-        
-        // حفظ الإعدادات
-        document.getElementById('save-settings-btn').addEventListener('click', () => {
-            alert('تم حفظ الإعدادات بنجاح!');
-        });
-        
-        // البحث عن الأفعال
-        document.getElementById('search-btn').addEventListener('click', searchVerb);
-        
-        function searchVerb() {
-            const verb = document.getElementById('verb-search').value.toLowerCase();
-            if(!verb) return;
-            
-            // هذه مجرد محاكاة - في التطبيق الحقيقي ستكون هناك قاعدة بيانات للأفعال
-            const verbs = {
-                'play': {
-                    base: 'play',
-                    past: 'played',
-                    participle: 'played',
-                    continuous: 'playing',
-                    examples: [
-                        'I play football every weekend.',
-                        'Yesterday, I played tennis.',
-                        'I have played this game before.'
-                    ]
-                },
-                'go': {
-                    base: 'go',
-                    past: 'went',
-                    participle: 'gone',
-                    continuous: 'going',
-                    examples: [
-                        'I go to school every day.',
-                        'Yesterday, I went to the park.',
-                        'I have gone to this place before.'
-                    ]
-                },
-                'eat': {
-                    base: 'eat',
-                    past: 'ate',
-                    participle: 'eaten',
-                    continuous: 'eating',
-                    examples: [
-                        'I eat breakfast at 7 AM.',
-                        'Yesterday, I ate pizza for dinner.',
-                        'I have eaten at this restaurant before.'
-                    ]
-                }
-            };
-            
-            if(verbs[verb]) {
-                const verbData = verbs[verb];
-                document.getElementById('verb-name').textContent = verb;
-                document.getElementById('base-form').textContent = verbData.base;
-                document.getElementById('past-form').textContent = verbData.past;
-                document.getElementById('participle-form').textContent = verbData.participle;
-                document.getElementById('continuous-form').textContent = verbData.continuous;
+            verbExamples.innerHTML = `
+                <h3 class="section-title">兀賲孬賱丞 丕爻鬲禺丿丕賲 丕賱賮毓賱 "${verb}"</h3>
                 
-                const examplesList = document.getElementById('verb-examples');
-                examplesList.innerHTML = '';
-                verbData.examples.forEach(example => {
-                    const li = document.createElement('li');
-                    li.textContent = example;
-                    examplesList.appendChild(li);
-                });
-            } else {
-                alert('لم يتم العثور على الفعل. الرجاء التأكد من الإملاء.');
-            }
-        }
-    </script>
-</body>
-    </html>
+                <div class="example-card">
+                    <div class="example-title">丕賱賲丕囟賷 丕賱鬲丕賲 (Past Perfect)</div>
+                    <div class="example-sentence">I had ${verbData.past_participle} before you arrived. (賰賳鬲 賯丿 ${verbData.arabic} 賯亘賱 賵氐賵賱賰)</div>
+                    <div class="example-sentence">After I had ${verbData.past_participle}, I went to sleep. (亘毓丿 兀賳 ${verbData.arabic}貙 匕賴亘鬲 賱賱賳賵賲)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">丕賱賲囟丕乇毓 丕賱鬲丕賲 (Present Perfect)</div>
+                    <div class="example-sentence">I have ${verbData.past_participle} this before. (賱賯丿 ${verbData.arabic} 賴匕丕 賲賳 賯亘賱)</div>
+                    <div class="example-sentence">She has never ${verbData.past_participle} a camel. (賴賷 賱賲 ${verbData.arabic} 噩賲賱丕賸 兀亘丿丕賸)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">丕賱賲囟丕乇毓 丕賱鬲丕賲 丕賱賲爻鬲賲乇 (Present Perfect Continuous)</div>
+                    <div class="example-sentence">I have been ${verb}ing for hours. (兀賳丕 兀${verbData.arabic} 賲賳匕 爻丕毓丕鬲)</div>
+  
