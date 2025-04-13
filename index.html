@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <title>موقع تعلم الأفعال بتصريفاتها،والأسماء والصفات والأحوال الإنجليزية -قاموس عربي إنجليزي مع النطق</title>
-    <link rel="stylesheet" href="https://abdallh10055.github.io/world-of-verbs-/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
          :root {
             --primary-color: #3498db;
@@ -1417,7 +1417,7 @@
                         </div>
                         <div class="result-item">
                             <span>الإجابات الصحيحة:</span>
-                            <span id="correctAnswers">8</span>
+                            <span id="correctAnswers">10</span>
                         </div>
                         <div class="result-item">
                             <span>الإجابات الخاطئة:</span>
@@ -1429,9 +1429,8 @@
                         </div>
                     </div>
 
-                    <button class="restart-btn" id="restartTestBtn">إعادة الاختبار</button>
-                    <button class="restart-btn retry-wrong-btn" id="retryWrongBtn">إعادة الأسئلة الخاطئة فقط</button>
-                    <button class="restart-btn print-results-btn" id="printResultsBtn"><i class="fas fa-print"></i> طباعة النتائج</button>
+                    <button class="restart-btn" id="restartTestBtn">إختبار جديد</button>
+
                 </div>
             </div>
         </div>
@@ -1441,7 +1440,7 @@
                 <h2 class="section-title">شرح القواعد في اللغة الإنجليزية</h2>
                 <p class="section-text">لتعلم القواعد الإنجليزية، يرجى زيارة موقعنا المخصص للقواعد:</p>
 
-                <a href="https://abdallh10055.github.io/world-of-verbs-/" target="_blank">
+                <a href="https://abdallh10055.github.io/world-of-verbs-/" class="download-btn" target="_blank">
                     <i class="fas fa-external-link-alt"></i> الانتقال إلى موقع القواعد
                 </a>
 
@@ -1462,7 +1461,7 @@
                 </a>
 
                 <div style="margin-top: 30px;">
-                    <img src="https://abdallh10055.github.io/world-of-verbs-/" alt="موقع الأفعال الإنجليزية" style="max-width: 100%; border-radius: var(--border-radius);">
+                    <img src="https://via.placeholder.com/300x200?text=World+of+Verbs" alt="موقع الأفعال الإنجليزية" style="max-width: 100%; border-radius: var(--border-radius);">
                 </div>
             </div>
         </div>
@@ -2180,36 +2179,7 @@
         }
 
         // إعادة الأسئلة الخاطئة فقط
-        function retryWrongAnswers() {
-            const wrongQuestions = userAnswers
-                .filter(answer => !answer.isCorrect)
-                .map(answer => {
-                    const wordData = wordsDictionary[answer.word];
 
-                    if (answer.question.includes('المعنى')) {
-                        return {
-                            question: answer.question,
-                            options: generateWordOptions(answer.word, 'meaning'),
-                            answer: wordData.arabic_meaning,
-                            word: answer.word
-                        };
-                    } else {
-                        return {
-                            question: answer.question,
-                            options: generateWordOptions(answer.word, 'definition'),
-                            answer: wordData.definition || 'لا يوجد تعريف',
-                            word: answer.word
-                        };
-                    }
-                });
-
-            if (wrongQuestions.length > 0) {
-                testQuestions = wrongQuestions;
-                startTest();
-            } else {
-                showNotification('لا توجد أسئلة خاطئة لإعادة الاختبار عليها!');
-            }
-        }
 
         // طباعة النتائج
         function printResults() {
@@ -2495,7 +2465,7 @@
             });
 
             verbsBtn.addEventListener('click', () => {
-                window.open('https://abdallh10055.github.io/world-of-verbs-/', '_blank');
+                window.open('https://abdallh10055.github.io/world-of-verbs-pro/', '_blank');
             });
 
             downloadBtn.addEventListener('click', () => {
@@ -2521,8 +2491,7 @@
             nextQuestionBtn.addEventListener('click', nextQuestion);
             finishTestBtn.addEventListener('click', finishTest);
             restartTestBtn.addEventListener('click', restartTest);
-            retryWrongBtn.addEventListener('click', retryWrongAnswers);
-            printResultsBtn.addEventListener('click', printResults);
+
 
             // أحداث الشريط الجانبي
             sidebarToggle.addEventListener('click', () => {
@@ -2551,7 +2520,7 @@
                     // إظهار التبويب المحدد
                     if (tabId === 'verbsTab' || tabId === 'grammarTab') {
                         // إذا كان التبويب هو الأفعال أو القواعد، نفتح الرابط في نافذة جديدة
-                        window.open('https://abdallh10055.github.io/world-of-verbs-/', '_blank');
+                        window.open('https://abdallh10055.github.io/world-of-verbs-pro/', '_blank');
                     } else {
                         showTab(tab);
                     }
@@ -2575,7 +2544,7 @@
                     // إظهار التبويب المحدد
                     if (tabId === 'verbsTab' || tabId === 'grammarTab') {
                         // إذا كان التبويب هو الأفعال أو القواعد، نفتح الرابط في نافذة جديدة
-                        window.open('https://abdallh10055.github.io/world-of-verbs-/', '_blank');
+                        window.open('https://abdallh10055.github.io/world-of-verbs-pro/', '_blank');
                     } else {
                         showTab(tab);
                     }
